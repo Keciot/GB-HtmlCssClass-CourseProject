@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Thin.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(../fonts/Raleway-Regular.ttf);
+  font-weight: 400;
+}
+
+/* временная переменная штука для быстрого включения выключения границ элемента при отладке */
+body {
+  font-family: 'Montserrat';
+}
+
+body a {
+  text-decoration: none;
+  /*  display: block; */
+}
+
+header {
+  width: 1920px;
+  background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
+  background-blend-mode: darken;
+  height: 1024px;
+  margin: 0 auto;
+}
+
+header .header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 374px 285px 374px;
+  height: 56px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header-nav .header-logo {
+  font-family: 'Raleway';
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -1.36px;
+  line-height: 56px;
+  color: #ffffff;
+}
+
+header .header-nav .header-logo::before {
+  content: '';
+  background-image: url(../img/icons/logo.svg);
+  display: block;
+  float: left;
+  width: 64px;
+  height: 56px;
+  margin: 0;
+}
+
+header .header-nav .header-nav-list {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+header .header-nav .header-nav-list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header-nav .header-nav-list ul li {
+  list-style: none;
+  padding-right: 30px;
+}
+
+header .header-nav .header-nav-list ul li a {
+  color: #ffffff;
+}
+
+header .header-nav .header-cart {
+  border: 2px solid red;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .header-nav .header-search {
+  border: 2px solid red;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=styles.css.map */
