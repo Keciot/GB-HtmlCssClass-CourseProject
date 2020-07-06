@@ -1,51 +1,29 @@
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat-Regular.ttf);
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat-Light.ttf);
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat-Thin.ttf);
-    font-weight: 100;
-}
-
-@font-face {
-    font-family: 'Raleway';
-    src: url(../fonts/Raleway-Regular.ttf);
-    font-weight: 400;
-}
-
-
-
 $fullWidth: 1920px;
 
 /* временная переменная штука для быстрого включения выключения границ элемента при отладке */
 @mixin tempBorder {
-    border: 2px solid red; 
-    box-sizing: border-box; 
+    border: 2px solid red;
+    box-sizing: border-box;
+}
+
+@mixin hoverBrown {
+    &:hover {
+        color: #c7b299;
+    }
 }
 
 body {
     font-family: 'Montserrat';
-    
+
     a {
         text-decoration: none;
-       /*  display: block; */
     }
 
 }
 
 header {
     width: $fullWidth;
-    background: rgba(17, 17, 17, 0.7) 
-    url(../img/header-photo.jpg) center center no-repeat;
+    background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
     background-blend-mode: darken;
     height: 1024px;
     margin: 0 auto;
@@ -55,6 +33,7 @@ header {
         padding: 40px 374px 285px 374px;
         height: 56px;
         justify-content: space-between;
+    
 
 
         .header-logo {
@@ -74,37 +53,94 @@ header {
                 height: 56px;
                 margin: 0;
             }
-    
+
+            @include hoverBrown;
+
         }
 
-        .header-nav-list {
+        &-pusher {
+            flex-grow: 1;
+        }
+
+        &-list {
             font-weight: 300;
             font-size: 14px;
+            padding-top: 5px;
+            float: right;
 
             ul {
                 display: flex;
 
                 li {
                     list-style: none;
-                    padding-right: 30px;
+                    padding-right: 27px;
 
                     a {
                         color: #ffffff;
-                    } 
+
+                        @include hoverBrown;
+
+                        &:active {
+                            color: #c7b299;
+                            font-weight: 700;
+                        }
+
+                        /* Я вижу, что при нажатии меню дергается, но для active может это и хорошо, привлекает внимание к нажатому элементу. а по hover ничего не прыгает.  */
+                    }
+
+                    &:nth-child(2) a {
+                        color: #c7b299;
+                    }
+
+                    &:last-child {
+                        margin-right: 20px;
+                    }
+
+
                 }
             }
 
         }
-        
+
         .header-cart {
-            @include tempBorder;
+            border: none;
+            background-color: transparent;
+            background: url(../img/icons/icon-cart.svg) center center no-repeat;
+            width: 40px;
+            height: 40px;
+            color: #ffffff;
+            margin-top: 5px;
+            margin-right: 20px;
+
+            &:hover {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 24"><path d="M15,3H13.5c0-1.66-2-3-4.5-3S4.5,1.34,4.5,3H3A3,3,0,0,0,0,6V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V6A3,3,0,0,0,15,3ZM9,1.5c1.66,0,3,.46,3,1.5H6C6,2,7.34,1.5,9,1.5ZM16.49,21A1.52,1.52,0,0,1,15,22.5H3A1.5,1.5,0,0,1,1.5,21V19.5h15Zm0-3H1.5V6A1.5,1.5,0,0,1,3,4.5H4.5V9H6V4.5h6V9h1.5V4.5H15A1.52,1.52,0,0,1,16.49,6Z" style="fill:%23c7b299;fill-rule:evenodd"/></svg>');
+                background-size: 18px 24px;
+            }
+
+            &:active {
+                border: 2px solid #c7b299;
+                border-radius: 50%;
+                box-shadow: none;
+                box-sizing: border-box;
+                /*     Все равно при нажатии остается какая-то штатная рамка нажатости кнопки, outline none ее не убирает, пока пусть так, но что-то тут не то =( */
+            }
 
         }
 
         .header-search {
-            @include tempBorder;
+            margin-top: 15px;
+
+            input {
+                display: none;
+            }
 
         }
+
+
+
+
+
+
     }
 
 }
