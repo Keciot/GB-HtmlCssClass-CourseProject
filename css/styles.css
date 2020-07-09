@@ -431,4 +431,125 @@ aside p {
 aside a.big-yellow-button {
   margin: 6px 30px;
 }
+
+.section-desc-p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #8c8c8c;
+  width: 800px;
+  margin: 14px auto 34px auto;
+  -webkit-font-kerning: 0;
+          font-kerning: 0;
+}
+
+.projects {
+  padding: 78px 345px 0 345px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  color: #555555;
+  margin: 0;
+}
+
+.projects-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects-nav-element {
+  margin: 0 7px;
+  text-decoration: none;
+  height: 32px;
+  border-radius: 5px;
+  border: solid 1px #ebebeb;
+  min-width: 70px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 18px 0 18px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 32px;
+  text-align: center;
+  color: #8c8c8c;
+}
+
+.projects-nav-element:hover, .projects-nav-element.active-projects-button {
+  color: #ffffff;
+  background-color: #998675;
+}
+
+.projects-nav-element:active {
+  color: #ffffff;
+  background-color: #998675;
+  border-color: black;
+}
+
+.projects-pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px 0;
+}
+
+.projects-pics-item {
+  width: 370px;
+  background-color: #fbfaf8;
+  margin: 0 15px 30px 15px;
+  text-align: left;
+  /* дописать остаток hover и active? кнопка ниже не допозиционирована( */
+}
+
+.projects-pics-item h3 {
+  margin: 24px 0 0 0;
+  font-family: Raleway;
+  font-size: 20px;
+  font-weight: 500;
+  color: #c7b299;
+  position: relative;
+  padding-left: 30px;
+}
+
+.projects-pics-item h3:before {
+  content: '';
+  display: block;
+  border: 20px solid transparent;
+  border-bottom: 15px solid #fbfaf8;
+  position: absolute;
+  top: -58px;
+  left: 15px;
+}
+
+.projects-pics-item p {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  color: #d1d1d1;
+  margin: 0;
+  padding: 7px 0 27px 30px;
+}
+
+.projects-pics-item.active-projects-pic, .projects-pics-item:hover {
+  background-color: #362f2d;
+}
+
+.projects-pics-item.active-projects-pic h3,
+.projects-pics-item:hover h3 {
+  color: #ffffff;
+}
 /*# sourceMappingURL=styles.css.map */

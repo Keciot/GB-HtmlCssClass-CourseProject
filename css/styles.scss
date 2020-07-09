@@ -416,3 +416,124 @@ aside {
         margin: 6px 30px;
      }
 }
+
+.section-desc-p {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #8c8c8c;
+    width: 800px;
+    margin: 14px auto 34px auto;
+    font-kerning: 0;
+}
+
+.projects {
+    padding: 78px 345px 0 345px;
+    text-align: center;
+
+    h2 {
+        font-family: Raleway;
+        font-size: 30px;
+        font-weight: 600;
+        color: #555555;
+        margin: 0;
+    }
+
+    &-nav {
+        display: flex;
+        justify-content: center;
+
+        &-element {
+            margin: 0 7px;
+            text-decoration: none;
+            height: 32px;
+            border-radius: 5px;
+            border: solid 1px #ebebeb;
+            min-width: 70px;
+            box-sizing: border-box;
+            padding: 0 18px 0 18px;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 32px;
+            text-align: center;
+            color: #8c8c8c;
+    
+            &:hover,
+            &.active-projects-button {
+                color: #ffffff;
+                background-color: #998675;
+            }
+    
+            &:active {
+                color: #ffffff;
+                background-color: #998675;
+                border-color: black;
+            }
+        }
+    }
+
+    &-pics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px 0;
+
+        &-item {
+            width: 370px;
+            background-color: #fbfaf8;
+            margin: 0 15px 30px 15px;
+            text-align: left;
+            
+
+            h3 {
+                margin: 24px 0 0 0;
+                font-family: Raleway;
+                font-size: 20px;
+                font-weight: 500;
+                color: #c7b299;
+                position: relative;
+                padding-left: 30px;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    border: 20px solid transparent; 
+                    border-bottom: 15px solid #fbfaf8;
+                    position: absolute;
+                    top: -58px;
+                    left: 15px;
+
+                }
+            }
+
+            p {
+                font-family: Montserrat;
+                font-size: 14px;
+                font-weight: 300;
+                color: #d1d1d1;
+                margin: 0;
+                padding: 7px 0 27px 30px;
+            }
+
+            &.active-projects-pic,
+            &:hover {
+                background-color: #362f2d;
+            }
+
+            &.active-projects-pic h3,
+            &:hover h3 {
+                color: #ffffff;
+            } /* дописать остаток hover и active? кнопка ниже не допозиционирована( */
+
+
+
+        }
+
+    }
+
+
+
+
+}
