@@ -14,6 +14,8 @@ $fullWidth: 1920px;
 
 body {
     font-family: 'Montserrat';
+    color: #ffffff;
+
 
     a {
         text-decoration: none;
@@ -25,16 +27,17 @@ header {
     width: $fullWidth;
     background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
     background-blend-mode: darken;
+    background-attachment: fixed;
+    background-size: 100%;
+    /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
     height: 1024px;
     margin: 0 auto;
 
     .header-nav {
         display: flex;
-        padding: 40px 374px 285px 374px;
+        padding: 40px 374px 277px 374px;
         height: 56px;
         justify-content: space-between;
-    
-
 
         .header-logo {
             font-family: 'Raleway';
@@ -131,16 +134,248 @@ header {
             margin-top: 15px;
 
             input {
-                display: none;
+                width: 0;
+                outline: none;
+                border: none;
+                padding: 0;
+            }
+
+            input:focus {
+                width: 150px;
+                transition: width 1s ease-out;
+                margin-right: 10px;
+                padding: 4px;
+                /* С точки зрения UI наверное так себе решение, но пока пусть так */
+            }
+        }
+
+    }
+
+}
+
+.header-main {
+    padding: 0 161px 327px 159px;
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+        width: 52px;
+        height: 52px;
+        border: none;
+        border-top: 3px solid rgba(255, 255, 255, 0.5);
+        border-left: 3px solid rgba(255, 255, 255, 0.5);
+        background-color: transparent;
+        cursor: pointer;
+        margin-top: 112px;
+
+        &:hover {
+            border-color: #d3c1ad;
+        }
+
+        &.arrow-active {
+            border-color: #d3c1ad;
+        }
+    }
+
+    &-left {
+        transform: rotate(-45deg);
+    }
+
+    &-info {
+        text-align: center;
+
+        & h2 {
+            margin: 0;
+            font-family: Raleway;
+            font-size: 36px;
+            font-weight: 500;
+        }
+
+        & h1 {
+            margin: 0;
+            padding-top: 3px;
+            font-family: Raleway;
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: 0.011em;
+        }
+
+        & p {
+            width: 590px;
+            margin: 0;
+            padding-top: 14px;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        & a {
+            display: block;
+            margin: 50px auto 0 auto;
+            text-decoration: none;
+            text-transform: uppercase;
+            width: 170px;
+            height: 53px;
+            object-fit: contain;
+            border-radius: 3px;
+            box-shadow: inset 0px -3px 0 0 #736357;
+            box-sizing: border-box;
+            background-color: #998675;
+            font-family: Raleway;
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 53px;
+            color: #ffffff;
+
+            &:hover {
+                color: rosybrown;
+                background-color: black;
+            }
+
+            &:active {
+                color: rosybrown;
+                background-color: black;
+                box-shadow: 0px -3px 0 0 #736357;
+
             }
 
         }
+    }
 
+    &-right {
+        transform: rotate(135deg);
+    }
 
+}
 
+.header-main-pagination {
+    margin: 0 auto;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
 
+    &-circle {
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        opacity: 0.5;
 
+        &.circle-active {
+            background-color: transparent;
+            border: 2px solid #d3c1ad;
+            transform: scale(1.9);
+        }
+
+        &:hover {
+            background-color: transparent;
+            border: 2px solid #d3c1ad;
+            transform: scale(1.9);
+        }
+    }
+}
+
+main {
+    width: $fullWidth;
+    margin: 0 auto;
+}
+.features {
+    text-align: center;
+
+    &-blok-wrap {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        padding: 80px 345px 80px 345px;
 
     }
+
+    &-block {
+        width: 270px;
+        text-align: center;
+        margin: 0 15px 0 15px;
+
+        &-icon {
+            fill: #555555; 
+        }
+
+        h2 {
+            margin: 0;
+            padding-top: 20px;
+            font-family: Raleway;
+            font-size: 22px;
+            font-weight: 600;
+            color: #555555;
+
+        }
+
+        p {
+            font-family: Montserrat;
+             font-size: 14px;
+            font-weight: 300;
+            line-height: 1.71;
+            color: #8c8c8c ;
+            margin-bottom: 27px;
+            font-kerning: normal;
+        }
+
+        hr {
+            width: 70px;
+            height: 3px;
+            background-color: #f1eee9;
+            border: none;
+        }
+
+        &:hover svg,
+        &.active-block svg {
+            fill: #c7b299;
+        }
+
+        &:hover h2,
+        &.active-block h2 {
+            color: #c7b299;
+        }
+
+        &:hover hr,
+        &.active-block hr {
+            background-color: #c7b299;
+        }
+    }
+
+    &-content-wrap {
+        background-color: #fbfaf8;
+        padding: 70px 345px 0 345px;
+
+        h2 {
+            margin: 0;
+            font-family: Raleway;
+            font-size: 30px;
+            font-weight: 600;
+            color: #555555;
+        }
+        
+        p {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: #8c8c8c;
+            padding: 15px 0 32px 0;
+            width: 780px;
+            margin: 0 auto;
+            font-kerning: none;
+        }
+    }
+
+    &-pics {
+        min-height: 482px;
+        background-image: url(../img/browser-center.jpg), url(../img/browser-left.jpg),url(../img/browser-right.jpg);
+        background-repeat: no-repeat;
+        background-position: center,  left 80px,  right 80px;
+    }
+
 
 }

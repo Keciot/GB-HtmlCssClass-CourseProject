@@ -2,6 +2,7 @@
 /* временная переменная штука для быстрого включения выключения границ элемента при отладке */
 body {
   font-family: 'Montserrat';
+  color: #ffffff;
 }
 
 body a {
@@ -12,6 +13,9 @@ header {
   width: 1920px;
   background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
   background-blend-mode: darken;
+  background-attachment: fixed;
+  background-size: 100%;
+  /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
   height: 1024px;
   margin: 0 auto;
 }
@@ -20,7 +24,7 @@ header .header-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 40px 374px 285px 374px;
+  padding: 40px 374px 277px 374px;
   height: 56px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -127,6 +131,260 @@ header .header-nav .header-search {
 }
 
 header .header-nav .header-search input {
-  display: none;
+  width: 0;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+header .header-nav .header-search input:focus {
+  width: 150px;
+  -webkit-transition: width 1s ease-out;
+  transition: width 1s ease-out;
+  margin-right: 10px;
+  padding: 4px;
+  /* С точки зрения UI наверное так себе решение, но пока пусть так */
+}
+
+.header-main {
+  padding: 0 161px 327px 159px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-main button {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-top: 3px solid rgba(255, 255, 255, 0.5);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 112px;
+}
+
+.header-main button:hover {
+  border-color: #d3c1ad;
+}
+
+.header-main button.arrow-active {
+  border-color: #d3c1ad;
+}
+
+.header-main-left {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header-main-info {
+  text-align: center;
+}
+
+.header-main-info h2 {
+  margin: 0;
+  font-family: Raleway;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.header-main-info h1 {
+  margin: 0;
+  padding-top: 3px;
+  font-family: Raleway;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 0.011em;
+}
+
+.header-main-info p {
+  width: 590px;
+  margin: 0;
+  padding-top: 14px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.header-main-info a {
+  display: block;
+  margin: 50px auto 0 auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 170px;
+  height: 53px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0px -3px 0 0 #736357;
+          box-shadow: inset 0px -3px 0 0 #736357;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #998675;
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 53px;
+  color: #ffffff;
+}
+
+.header-main-info a:hover {
+  color: rosybrown;
+  background-color: black;
+}
+
+.header-main-info a:active {
+  color: rosybrown;
+  background-color: black;
+  -webkit-box-shadow: 0px -3px 0 0 #736357;
+          box-shadow: 0px -3px 0 0 #736357;
+}
+
+.header-main-right {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.header-main-pagination {
+  margin: 0 auto;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-main-pagination-circle {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  opacity: 0.5;
+}
+
+.header-main-pagination-circle.circle-active {
+  background-color: transparent;
+  border: 2px solid #d3c1ad;
+  -webkit-transform: scale(1.9);
+          transform: scale(1.9);
+}
+
+.header-main-pagination-circle:hover {
+  background-color: transparent;
+  border: 2px solid #d3c1ad;
+  -webkit-transform: scale(1.9);
+          transform: scale(1.9);
+}
+
+main {
+  width: 1920px;
+  margin: 0 auto;
+}
+
+.features {
+  text-align: center;
+}
+
+.features-blok-wrap {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 80px 345px 80px 345px;
+}
+
+.features-block {
+  width: 270px;
+  text-align: center;
+  margin: 0 15px 0 15px;
+}
+
+.features-block-icon {
+  fill: #555555;
+}
+
+.features-block h2 {
+  margin: 0;
+  padding-top: 20px;
+  font-family: Raleway;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.features-block p {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.71;
+  color: #8c8c8c;
+  margin-bottom: 27px;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+}
+
+.features-block hr {
+  width: 70px;
+  height: 3px;
+  background-color: #f1eee9;
+  border: none;
+}
+
+.features-block:hover svg,
+.features-block.active-block svg {
+  fill: #c7b299;
+}
+
+.features-block:hover h2,
+.features-block.active-block h2 {
+  color: #c7b299;
+}
+
+.features-block:hover hr,
+.features-block.active-block hr {
+  background-color: #c7b299;
+}
+
+.features-content-wrap {
+  background-color: #fbfaf8;
+  padding: 70px 345px 0 345px;
+}
+
+.features-content-wrap h2 {
+  margin: 0;
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.features-content-wrap p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #8c8c8c;
+  padding: 15px 0 32px 0;
+  width: 780px;
+  margin: 0 auto;
+  -webkit-font-kerning: none;
+          font-kerning: none;
+}
+
+.features-pics {
+  min-height: 482px;
+  background-image: url(../img/browser-center.jpg), url(../img/browser-left.jpg), url(../img/browser-right.jpg);
+  background-repeat: no-repeat;
+  background-position: center,  left 80px,  right 80px;
 }
 /*# sourceMappingURL=styles.css.map */
