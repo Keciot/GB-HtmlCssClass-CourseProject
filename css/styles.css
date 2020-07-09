@@ -512,7 +512,30 @@ aside a.big-yellow-button {
   background-color: #fbfaf8;
   margin: 0 15px 30px 15px;
   text-align: left;
-  /* дописать остаток hover и active? кнопка ниже не допозиционирована( */
+  position: relative;
+}
+
+.projects-pics-item-hoverlay {
+  display: none;
+  position: absolute;
+  width: 370px;
+  height: 237px;
+}
+
+.projects-pics-item-hoverlay a {
+  display: block;
+  text-decoration: none;
+  width: 25px;
+  height: 25px;
+  margin: 0 14px;
+}
+
+.projects-pics-item-hoverlay a:first-child {
+  background: url(../img/icons/share.svg) no-repeat;
+}
+
+.projects-pics-item-hoverlay a:last-child {
+  background: url(../img/icons/search-2.svg) no-repeat;
 }
 
 .projects-pics-item h3 {
@@ -551,5 +574,34 @@ aside a.big-yellow-button {
 .projects-pics-item.active-projects-pic h3,
 .projects-pics-item:hover h3 {
   color: #ffffff;
+}
+
+.projects-pics-item.active-projects-pic h3:before,
+.projects-pics-item:hover h3:before {
+  border-bottom: 15px solid  #362f2d;
+}
+
+.projects-pics-item.active-projects-pic p,
+.projects-pics-item:hover p {
+  color: #c7b299;
+}
+
+.projects-pics-item.active-projects-pic .projects-pics-item-hoverlay,
+.projects-pics-item:hover .projects-pics-item-hoverlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(17, 17, 17, 0.7);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects a.big-yellow-button {
+  margin-top: -36px;
+  margin-bottom: 80px;
 }
 /*# sourceMappingURL=styles.css.map */

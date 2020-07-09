@@ -485,7 +485,30 @@ aside {
             background-color: #fbfaf8;
             margin: 0 15px 30px 15px;
             text-align: left;
-            
+            position: relative;
+
+            &-hoverlay {
+                display: none;
+                position: absolute;
+                width: 370px;
+                height: 237px;
+
+                a{
+                    display: block;
+                    text-decoration: none;
+                    width: 25px;
+                    height: 25px;
+                    margin: 0 14px;
+
+                    &:first-child {
+                        background: url(../img/icons/share.svg) no-repeat;
+                    }
+                    &:last-child {
+                        background: url(../img/icons/search-2.svg) no-repeat;
+                    }
+
+                }
+            }
 
             h3 {
                 margin: 24px 0 0 0;
@@ -525,12 +548,38 @@ aside {
             &.active-projects-pic h3,
             &:hover h3 {
                 color: #ffffff;
-            } /* дописать остаток hover и active? кнопка ниже не допозиционирована( */
+
+                &:before {
+                    border-bottom: 15px solid  #362f2d;
+                }
+            } 
+
+            &.active-projects-pic p,
+            &:hover p {
+                color: #c7b299;
+            } 
+
+            &.active-projects-pic .projects-pics-item-hoverlay,
+            &:hover .projects-pics-item-hoverlay {
+                display: flex;
+                background-color: rgba(17, 17, 17, 0.7);
+                justify-content: center;
+                align-items: center;
+            } 
 
 
 
+
+
+
+            
         }
 
+    }
+
+    & a.big-yellow-button {
+        margin-top: -36px;
+        margin-bottom: 80px;
     }
 
 
