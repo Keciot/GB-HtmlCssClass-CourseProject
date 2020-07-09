@@ -23,6 +23,38 @@ body {
 
 }
 
+.big-yellow-button {
+    display: block;
+    margin: 50px auto 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 170px;
+    height: 53px;
+    object-fit: contain;
+    border-radius: 3px;
+    box-shadow: inset 0px -3px 0 0 #736357;
+    box-sizing: border-box;
+    background-color: #998675;
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 53px;
+    color: #ffffff;
+    text-align: center;
+
+    &:hover {
+        color: rosybrown;
+        background-color: black;
+    }
+
+    &:active {
+        color: rosybrown;
+        background-color: black;
+        box-shadow: 0px -3px 0 0 #736357;
+
+    }
+}
+
 header {
     width: $fullWidth;
     background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
@@ -210,37 +242,6 @@ header {
             line-height: 1.5;
         }
 
-        & a {
-            display: block;
-            margin: 50px auto 0 auto;
-            text-decoration: none;
-            text-transform: uppercase;
-            width: 170px;
-            height: 53px;
-            object-fit: contain;
-            border-radius: 3px;
-            box-shadow: inset 0px -3px 0 0 #736357;
-            box-sizing: border-box;
-            background-color: #998675;
-            font-family: Raleway;
-            font-size: 14px;
-            font-weight: 800;
-            line-height: 53px;
-            color: #ffffff;
-
-            &:hover {
-                color: rosybrown;
-                background-color: black;
-            }
-
-            &:active {
-                color: rosybrown;
-                background-color: black;
-                box-shadow: 0px -3px 0 0 #736357;
-
-            }
-
-        }
     }
 
     &-right {
@@ -282,6 +283,7 @@ main {
     width: $fullWidth;
     margin: 0 auto;
 }
+
 .features {
     text-align: center;
 
@@ -299,7 +301,7 @@ main {
         margin: 0 15px 0 15px;
 
         &-icon {
-            fill: #555555; 
+            fill: #555555;
         }
 
         h2 {
@@ -314,10 +316,10 @@ main {
 
         p {
             font-family: Montserrat;
-             font-size: 14px;
+            font-size: 14px;
             font-weight: 300;
             line-height: 1.71;
-            color: #8c8c8c ;
+            color: #8c8c8c;
             margin-bottom: 27px;
             font-kerning: normal;
         }
@@ -356,7 +358,7 @@ main {
             font-weight: 600;
             color: #555555;
         }
-        
+
         p {
             font-family: Montserrat;
             font-size: 16px;
@@ -372,10 +374,45 @@ main {
 
     &-pics {
         min-height: 482px;
-        background-image: url(../img/browser-center.jpg), url(../img/browser-left.jpg),url(../img/browser-right.jpg);
+        background-image: url(../img/browser-center.jpg), url(../img/browser-left.jpg), url(../img/browser-right.jpg);
         background-repeat: no-repeat;
-        background-position: center,  left 80px,  right 80px;
+        background-position: center, left 82px, right 82px;
     }
 
 
+}
+
+aside {
+    min-height: 150px;
+    background: linear-gradient(to right, #211b19, #4e3427);
+    display: flex;
+    justify-content: space-between;
+    padding: 43px 345px 0 345px;
+    box-sizing: border-box;
+
+    h2 {
+        font-family: Raleway;
+        font-size: 28px;
+        font-weight: 400;
+        color: #ffffff;
+        margin: 0;
+        padding-left: 32px;
+        font-kerning: none;
+
+        span {
+            color: #c7b299;
+        }
+    }
+
+    p {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 300;
+        color: #615855;
+        margin: 0;
+        padding: 3px 0 0 29px;
+    }
+    a.big-yellow-button {
+        margin: 6px 30px;
+     }
 }
