@@ -9,6 +9,11 @@ body a {
   text-decoration: none;
 }
 
+body button {
+  border: none;
+  outline: none;
+}
+
 .big-yellow-button {
   display: block;
   margin: 50px auto 0 auto;
@@ -64,6 +69,7 @@ header .header-nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  /* Нужен для отделения логотипа от меню, чтобы не разбивать интервал между ними паддингом. Занимает место и расталкивает элементы к левому/правому краям, при этом по идее в случае уменьшения ширины экрана не будет мешать переносу элементов */
 }
 
 header .header-nav .header-logo {
@@ -77,7 +83,7 @@ header .header-nav .header-logo {
 
 header .header-nav .header-logo::before {
   content: '';
-  background-image: url(../img/icons/logo.svg);
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63.031" height="55.125" viewBox="0 0 63.031 55.125"><path fill="%23fff" id="logos" class="cls-1" d="M413.108,50.713H402.6l5.254,9.191Zm-11.822.767-5.254,9.191H406.54Zm18.39,9.191-5.254-9.191-5.254,9.191h10.508ZM409.168,62.2l5.254,9.188,5.254-9.188H409.168Zm-13.136,0,5.254,9.188L406.54,62.2H396.032Zm-6.567,9.952h10.506l-5.253-9.187Zm36.778,0-5.253-9.187-5.252,9.187h10.5Zm-18.389-32.16-5.254,9.19h10.508ZM420.99,82.874l5.253-9.188h-10.5Zm-26.272,0,5.253-9.188H389.465Zm-11.821.767H393.4l-5.253-9.19Zm49.914,0-5.254-9.19-5.254,9.19h10.508ZM422.3,85.172l5.254,9.187,5.254-9.187H422.3Zm-13.135,0,5.254,9.187,5.254-9.187H409.168Zm-21.017,9.187,5.253-9.187H382.9Zm-11.82.769h10.5l-5.254-9.188Zm26.269,0h10.508l-5.254-9.188Zm13.138,0h10.5l-5.253-9.188Zm18.387-9.188-5.252,9.188h10.5Z" transform="translate(-376.344 -40)"/></svg>');
   display: block;
   float: left;
   width: 64px;
@@ -87,6 +93,10 @@ header .header-nav .header-logo::before {
 
 header .header-nav .header-logo:hover {
   color: #c7b299;
+}
+
+header .header-nav .header-logo:hover::before {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63.031" height="55.125" viewBox="0 0 63.031 55.125"><path fill="%23c7b299" id="logos" class="cls-1" d="M413.108,50.713H402.6l5.254,9.191Zm-11.822.767-5.254,9.191H406.54Zm18.39,9.191-5.254-9.191-5.254,9.191h10.508ZM409.168,62.2l5.254,9.188,5.254-9.188H409.168Zm-13.136,0,5.254,9.188L406.54,62.2H396.032Zm-6.567,9.952h10.506l-5.253-9.187Zm36.778,0-5.253-9.187-5.252,9.187h10.5Zm-18.389-32.16-5.254,9.19h10.508ZM420.99,82.874l5.253-9.188h-10.5Zm-26.272,0,5.253-9.188H389.465Zm-11.821.767H393.4l-5.253-9.19Zm49.914,0-5.254-9.19-5.254,9.19h10.508ZM422.3,85.172l5.254,9.187,5.254-9.187H422.3Zm-13.135,0,5.254,9.187,5.254-9.187H409.168Zm-21.017,9.187,5.253-9.187H382.9Zm-11.82.769h10.5l-5.254-9.188Zm26.269,0h10.508l-5.254-9.188Zm13.138,0h10.5l-5.253-9.188Zm18.387-9.188-5.252,9.188h10.5Z" transform="translate(-376.344 -40)"/></svg>');
 }
 
 header .header-nav-pusher {
@@ -115,7 +125,6 @@ header .header-nav-list ul li {
 
 header .header-nav-list ul li a {
   color: #ffffff;
-  /* Я вижу, что при нажатии меню дергается, но для active может это и хорошо, привлекает внимание к нажатому элементу. а по hover ничего не прыгает.  */
 }
 
 header .header-nav-list ul li a:hover {
@@ -123,8 +132,7 @@ header .header-nav-list ul li a:hover {
 }
 
 header .header-nav-list ul li a:active {
-  color: #c7b299;
-  font-weight: 700;
+  color: black;
 }
 
 header .header-nav-list ul li:nth-child(2) a {
@@ -163,6 +171,7 @@ header .header-nav .header-cart:active {
 
 header .header-nav .header-search {
   margin-top: 15px;
+  position: relative;
 }
 
 header .header-nav .header-search input {
@@ -170,15 +179,17 @@ header .header-nav .header-search input {
   outline: none;
   border: none;
   padding: 0;
+  position: absolute;
+  top: 40px;
+  right: -10px;
 }
 
 header .header-nav .header-search input:focus {
-  width: 150px;
+  width: 300px;
   -webkit-transition: width 1s ease-out;
   transition: width 1s ease-out;
   margin-right: 10px;
   padding: 4px;
-  /* С точки зрения UI наверное так себе решение, но пока пусть так */
 }
 
 .header-main {
@@ -204,6 +215,10 @@ header .header-nav .header-search input:focus {
 
 .header-main button:hover {
   border-color: #d3c1ad;
+}
+
+.header-main button:active {
+  border-color: black !important;
 }
 
 .header-main button.arrow-active {
@@ -308,10 +323,14 @@ main {
   width: 270px;
   text-align: center;
   margin: 0 15px 0 15px;
+  /* Я понимаю, как сделать это через ::after, но не понимаю, почему нельзя через hr? Вроде бы все еще поддерживаемый, не выведенный из использования тег... Или смысл в экономии кода в html, задав after для всех элементов 1 раз? */
 }
 
 .features-block-icon {
   fill: #555555;
+  display: block;
+  height: 49px;
+  margin: auto auto;
 }
 
 .features-block h2 {
@@ -428,7 +447,7 @@ aside p {
   padding: 3px 0 0 29px;
 }
 
-aside a.big-yellow-button {
+aside .big-yellow-button {
   margin: 6px 30px;
 }
 
@@ -482,6 +501,7 @@ aside a.big-yellow-button {
   line-height: 32px;
   text-align: center;
   color: #8c8c8c;
+  cursor: pointer;
 }
 
 .projects-nav-element:hover, .projects-nav-element.active-projects-button {
@@ -558,7 +578,8 @@ aside a.big-yellow-button {
   left: 15px;
 }
 
-.projects-pics-item p {
+.projects-pics-item span {
+  display: block;
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 300;

@@ -85,7 +85,7 @@
                 </div>
                 <div class="features-block">
                     <svg class="features-block-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="49">
-                        <path d="M51.411,14.341 L41.921,33.763 C41.326,34.984 39.729,35.984 38.378,35.984 L3.080,35.984 C1.730,35.984 1.112,34.982 1.711,33.763 L11.203,14.341 C11.796,13.118 13.392,12.115 14.742,12.115 L50.040,12.115 C51.394,12.115 52.009,13.118 51.411,14.341 ZM9.000,13.245 L0.738,30.147 L0.738,7.983 C0.738,6.619 1.843,5.501 3.196,5.502 L14.012,5.502 L14.012,4.058 C14.012,3.063 14.394,2.135 15.094,1.430 C15.793,0.723 16.717,0.335 17.701,0.335 L23.991,0.335 C26.020,0.335 27.675,2.002 27.675,4.058 L27.675,5.501 L38.491,5.501 C39.842,5.501 40.949,6.619 40.949,7.983 L40.949,9.637 L14.742,9.637 C12.475,9.637 10.002,11.187 9.000,13.245 ZM16.470,5.502 L25.217,5.502 L25.217,4.058 C25.217,3.370 24.667,2.815 23.989,2.815 L17.698,2.815 C17.372,2.815 17.063,2.945 16.832,3.183 C16.602,3.417 16.470,3.730 16.470,4.058 L16.470,5.502 Z" />  <!-- Мне удалось отровнять высоту блока svg вручную, самая первая иконка выше всех, остальные выгружаются с параметрами меньше и сами картинки прилепляются к верхней ганице все равно. По идее, можно было бы задать каждой иконке обертку и отровнять внутри нее, но может быть есть более изящные решения? Еще можно переподготовить svg из фотошопа, задав canvas size, можно, наверное, сделать через position abcolute, но можно ли как-то все же через атрибуты самого svg задать это позиционирование... -->
+                        <path d="M51.411,14.341 L41.921,33.763 C41.326,34.984 39.729,35.984 38.378,35.984 L3.080,35.984 C1.730,35.984 1.112,34.982 1.711,33.763 L11.203,14.341 C11.796,13.118 13.392,12.115 14.742,12.115 L50.040,12.115 C51.394,12.115 52.009,13.118 51.411,14.341 ZM9.000,13.245 L0.738,30.147 L0.738,7.983 C0.738,6.619 1.843,5.501 3.196,5.502 L14.012,5.502 L14.012,4.058 C14.012,3.063 14.394,2.135 15.094,1.430 C15.793,0.723 16.717,0.335 17.701,0.335 L23.991,0.335 C26.020,0.335 27.675,2.002 27.675,4.058 L27.675,5.501 L38.491,5.501 C39.842,5.501 40.949,6.619 40.949,7.983 L40.949,9.637 L14.742,9.637 C12.475,9.637 10.002,11.187 9.000,13.245 ZM16.470,5.502 L25.217,5.502 L25.217,4.058 C25.217,3.370 24.667,2.815 23.989,2.815 L17.698,2.815 C17.372,2.815 17.063,2.945 16.832,3.183 C16.602,3.417 16.470,3.730 16.470,4.058 L16.470,5.502 Z" /> 
 
                     </svg>
                     <h2>Marketing</h2>
@@ -107,28 +107,33 @@
                 <h2><span>Waxom </span>Multipurpose WordPress Theme</h2>
                 <p>Don't Forget to Rate the Template. Thanks so much!</p>
             </div>
-            <a href="" class="big-yellow-button">Purchase Now</a>
+            <div>
+                <button class="big-yellow-button">Purchase Now</button>
+            </div>
+ <!--  <a href="#" class="big-yellow-button">Purchase Now</a>  Исправила -->
         </aside>
 
         <section class="projects">
             <h2>Our Latest Projects.</h2>
             <p class="section-desc-p">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
-            <div class="projects-nav">s
-                <a href="#" class="projects-nav-element active-projects-button">All</a>
-                <a href="#" class="projects-nav-element">Web Design</a>
-                <a href="#" class="projects-nav-element">Mobile App</a>
-                <a href="#" class="projects-nav-element">Illustration</a>
-                <a href="#" class="projects-nav-element">Photography</a>
+            <div class="projects-nav">
+                <button class="projects-nav-element active-projects-button">All</button>
+                <button class="projects-nav-element">Web Design</button>
+                <button class="projects-nav-element">Mobile App</button>
+                <button class="projects-nav-element">Illustration</button>
+                <button class="projects-nav-element">Photography</button>
             </div>
             <div class="projects-pics">
+                
                 <div class="projects-pics-item">
                     <div class="projects-pics-item-hoverlay">
                         <a href="#" class="projects-pics-item-hoverlay-share"></a>
                         <a href="#" class="projects-pics-item-hoverlay-search"></a>
-                    </div>
+                    </div> <!-- Вижу комментарий о переносе этого дива после кода карочки, но тогда нужно будет дополнительно перепозиционировать его при наведении, а в таком положении позиционирование не требуется, карточка hover просто перекрывает исходный блок. В чем смысл переноса? -->
                     <img src="img/project-1.jpg" alt="phone" height="237">
                     <h3>Claritas Etiam Processus</h3>
-                    <p>Photography, Nature</p>
+                    <span>Photography, Nature</span>
+                    
                 </div>
                 <div class="projects-pics-item active-projects-pic">
                     <div class="projects-pics-item-hoverlay">
@@ -137,7 +142,7 @@
                     </div>
                     <img src="img/project-2.jpg" alt="sea" height="237">
                     <h3>Quam Nutamus Farum</h3>
-                    <p>Graphic Design, Mock-Up</p>
+                    <span>Graphic Design, Mock-Up</span>
                 </div>
                 <div class="projects-pics-item">
                     <div class="projects-pics-item-hoverlay">
@@ -146,7 +151,7 @@
                     </div>
                     <img src="img/project-3.jpg" alt="book" height="237">
                     <h3>Usus Legentis Videntur</h3>
-                    <p>Photography, Holiday</p>
+                    <span>Photography, Holiday</span>
                 </div>
                 <div class="projects-pics-item">
                     <div class="projects-pics-item-hoverlay">
@@ -155,7 +160,7 @@
                     </div>
                     <img src="img/project-4.jpg" alt="mountain" height="237">
                     <h3>Claritas Etiam Processus</h3>
-                    <p>Photography, Nature</p>
+                    <span>Photography, Nature</span>
                 </div>
                 <div class="projects-pics-item">
                     <div class="projects-pics-item-hoverlay">
@@ -163,8 +168,8 @@
                         <a href="#" class="projects-pics-item-hoverlay-search"></a>
                     </div>
                     <img src="img/project-5.jpg" alt="journal" height="237">
-                    <h3>Quam Nutamus Farum/h3>
-                    <p>Graphic Design, Mock-Up</p>
+                    <h3>Quam Nutamus Farum</h3>
+                    <span>Graphic Design, Mock-Up</span>
                 </div>
                 <div class="projects-pics-item">
                     <div class="projects-pics-item-hoverlay">
@@ -173,7 +178,7 @@
                     </div>
                     <img src="img/project-6.jpg" alt="phone" height="237">
                     <h3>Usus Legentis Videntur</h3>
-                    <p>Photography, Holiday</p>
+                    <span>Photography, Holiday</span>
                 </div>
 
             </div>
