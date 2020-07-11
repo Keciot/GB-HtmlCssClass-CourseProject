@@ -1,42 +1,56 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../fonts/Montserrat-Regular.ttf);
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../fonts/Montserrat-Light.ttf);
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url(../fonts/Montserrat-Thin.ttf);
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url(../fonts/Raleway-Regular.ttf);
-  font-weight: 400;
-}
-
 /* временная переменная штука для быстрого включения выключения границ элемента при отладке */
 body {
   font-family: 'Montserrat';
+  color: #ffffff;
 }
 
 body a {
   text-decoration: none;
-  /*  display: block; */
+}
+
+.big-yellow-button {
+  display: block;
+  margin: 50px auto 0 auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 170px;
+  height: 53px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0px -3px 0 0 #736357;
+          box-shadow: inset 0px -3px 0 0 #736357;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #998675;
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 53px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.big-yellow-button:hover {
+  color: rosybrown;
+  background-color: black;
+}
+
+.big-yellow-button:active {
+  color: rosybrown;
+  background-color: black;
+  -webkit-box-shadow: 0px -3px 0 0 #736357;
+          box-shadow: 0px -3px 0 0 #736357;
 }
 
 header {
   width: 1920px;
   background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
   background-blend-mode: darken;
+  background-attachment: fixed;
+  background-size: 100%;
+  /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
   height: 1024px;
   margin: 0 auto;
 }
@@ -45,7 +59,7 @@ header .header-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 40px 374px 285px 374px;
+  padding: 40px 374px 277px 374px;
   height: 56px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -71,35 +85,523 @@ header .header-nav .header-logo::before {
   margin: 0;
 }
 
-header .header-nav .header-nav-list {
-  font-weight: 300;
-  font-size: 14px;
+header .header-nav .header-logo:hover {
+  color: #c7b299;
 }
 
-header .header-nav .header-nav-list ul {
+header .header-nav-pusher {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+header .header-nav-list {
+  font-weight: 300;
+  font-size: 14px;
+  padding-top: 5px;
+  float: right;
+}
+
+header .header-nav-list ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .header-nav .header-nav-list ul li {
+header .header-nav-list ul li {
   list-style: none;
-  padding-right: 30px;
+  padding-right: 27px;
 }
 
-header .header-nav .header-nav-list ul li a {
+header .header-nav-list ul li a {
   color: #ffffff;
+  /* Я вижу, что при нажатии меню дергается, но для active может это и хорошо, привлекает внимание к нажатому элементу. а по hover ничего не прыгает.  */
+}
+
+header .header-nav-list ul li a:hover {
+  color: #c7b299;
+}
+
+header .header-nav-list ul li a:active {
+  color: #c7b299;
+  font-weight: 700;
+}
+
+header .header-nav-list ul li:nth-child(2) a {
+  color: #c7b299;
+}
+
+header .header-nav-list ul li:last-child {
+  margin-right: 20px;
 }
 
 header .header-nav .header-cart {
-  border: 2px solid red;
+  border: none;
+  background-color: transparent;
+  background: url(../img/icons/icon-cart.svg) center center no-repeat;
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+header .header-nav .header-cart:hover {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 24"><path d="M15,3H13.5c0-1.66-2-3-4.5-3S4.5,1.34,4.5,3H3A3,3,0,0,0,0,6V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V6A3,3,0,0,0,15,3ZM9,1.5c1.66,0,3,.46,3,1.5H6C6,2,7.34,1.5,9,1.5ZM16.49,21A1.52,1.52,0,0,1,15,22.5H3A1.5,1.5,0,0,1,1.5,21V19.5h15Zm0-3H1.5V6A1.5,1.5,0,0,1,3,4.5H4.5V9H6V4.5h6V9h1.5V4.5H15A1.52,1.52,0,0,1,16.49,6Z" style="fill:%23c7b299;fill-rule:evenodd"/></svg>');
+  background-size: 18px 24px;
+}
+
+header .header-nav .header-cart:active {
+  border: 2px solid #c7b299;
+  border-radius: 50%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*     Все равно при нажатии остается какая-то штатная рамка нажатости кнопки, outline none ее не убирает, пока пусть так, но что-то тут не то =( */
+}
+
+header .header-nav .header-search {
+  margin-top: 15px;
+}
+
+header .header-nav .header-search input {
+  width: 0;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+header .header-nav .header-search input:focus {
+  width: 150px;
+  -webkit-transition: width 1s ease-out;
+  transition: width 1s ease-out;
+  margin-right: 10px;
+  padding: 4px;
+  /* С точки зрения UI наверное так себе решение, но пока пусть так */
+}
+
+.header-main {
+  padding: 0 161px 327px 159px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-main button {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-top: 3px solid rgba(255, 255, 255, 0.5);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 112px;
+}
+
+.header-main button:hover {
+  border-color: #d3c1ad;
+}
+
+.header-main button.arrow-active {
+  border-color: #d3c1ad;
+}
+
+.header-main-left {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header-main-info {
+  text-align: center;
+}
+
+.header-main-info h2 {
+  margin: 0;
+  font-family: Raleway;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.header-main-info h1 {
+  margin: 0;
+  padding-top: 3px;
+  font-family: Raleway;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: 0.011em;
+}
+
+.header-main-info p {
+  width: 590px;
+  margin: 0;
+  padding-top: 14px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.header-main-right {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.header-main-pagination {
+  margin: 0 auto;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-main-pagination-circle {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  opacity: 0.5;
+}
+
+.header-main-pagination-circle.circle-active {
+  background-color: transparent;
+  border: 2px solid #d3c1ad;
+  -webkit-transform: scale(1.9);
+          transform: scale(1.9);
+}
+
+.header-main-pagination-circle:hover {
+  background-color: transparent;
+  border: 2px solid #d3c1ad;
+  -webkit-transform: scale(1.9);
+          transform: scale(1.9);
+}
+
+main {
+  width: 1920px;
+  margin: 0 auto;
+}
+
+.features {
+  text-align: center;
+}
+
+.features-blok-wrap {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 80px 345px 80px 345px;
+}
+
+.features-block {
+  width: 270px;
+  text-align: center;
+  margin: 0 15px 0 15px;
+}
+
+.features-block-icon {
+  fill: #555555;
+}
+
+.features-block h2 {
+  margin: 0;
+  padding-top: 20px;
+  font-family: Raleway;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.features-block p {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.71;
+  color: #8c8c8c;
+  margin-bottom: 27px;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+}
+
+.features-block hr {
+  width: 70px;
+  height: 3px;
+  background-color: #f1eee9;
+  border: none;
+}
+
+.features-block:hover svg,
+.features-block.active-block svg {
+  fill: #c7b299;
+}
+
+.features-block:hover h2,
+.features-block.active-block h2 {
+  color: #c7b299;
+}
+
+.features-block:hover hr,
+.features-block.active-block hr {
+  background-color: #c7b299;
+}
+
+.features-content-wrap {
+  background-color: #fbfaf8;
+  padding: 70px 345px 0 345px;
+}
+
+.features-content-wrap h2 {
+  margin: 0;
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.features-content-wrap p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #8c8c8c;
+  padding: 15px 0 32px 0;
+  width: 780px;
+  margin: 0 auto;
+  -webkit-font-kerning: none;
+          font-kerning: none;
+}
+
+.features-pics {
+  min-height: 482px;
+  background-image: url(../img/browser-center.jpg), url(../img/browser-left.jpg), url(../img/browser-right.jpg);
+  background-repeat: no-repeat;
+  background-position: center, left 82px, right 82px;
+}
+
+aside {
+  min-height: 150px;
+  background: -webkit-gradient(linear, left top, right top, from(#211b19), to(#4e3427));
+  background: linear-gradient(to right, #211b19, #4e3427);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 43px 345px 0 345px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-header .header-nav .header-search {
-  border: 2px solid red;
+aside h2 {
+  font-family: Raleway;
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  padding-left: 32px;
+  -webkit-font-kerning: none;
+          font-kerning: none;
+}
+
+aside h2 span {
+  color: #c7b299;
+}
+
+aside p {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 300;
+  color: #615855;
+  margin: 0;
+  padding: 3px 0 0 29px;
+}
+
+aside a.big-yellow-button {
+  margin: 6px 30px;
+}
+
+.section-desc-p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #8c8c8c;
+  width: 800px;
+  margin: 14px auto 34px auto;
+  -webkit-font-kerning: 0;
+          font-kerning: 0;
+}
+
+.projects {
+  padding: 78px 345px 0 345px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  color: #555555;
+  margin: 0;
+}
+
+.projects-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects-nav-element {
+  margin: 0 7px;
+  text-decoration: none;
+  height: 32px;
+  border-radius: 5px;
+  border: solid 1px #ebebeb;
+  min-width: 70px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 0 18px 0 18px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 32px;
+  text-align: center;
+  color: #8c8c8c;
+}
+
+.projects-nav-element:hover, .projects-nav-element.active-projects-button {
+  color: #ffffff;
+  background-color: #998675;
+}
+
+.projects-nav-element:active {
+  color: #ffffff;
+  background-color: #998675;
+  border-color: black;
+}
+
+.projects-pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px 0;
+}
+
+.projects-pics-item {
+  width: 370px;
+  background-color: #fbfaf8;
+  margin: 0 15px 30px 15px;
+  text-align: left;
+  position: relative;
+}
+
+.projects-pics-item-hoverlay {
+  display: none;
+  position: absolute;
+  width: 370px;
+  height: 237px;
+}
+
+.projects-pics-item-hoverlay a {
+  display: block;
+  text-decoration: none;
+  width: 25px;
+  height: 25px;
+  margin: 0 14px;
+}
+
+.projects-pics-item-hoverlay a:first-child {
+  background: url(../img/icons/share.svg) no-repeat;
+}
+
+.projects-pics-item-hoverlay a:last-child {
+  background: url(../img/icons/search-2.svg) no-repeat;
+}
+
+.projects-pics-item h3 {
+  margin: 24px 0 0 0;
+  font-family: Raleway;
+  font-size: 20px;
+  font-weight: 500;
+  color: #c7b299;
+  position: relative;
+  padding-left: 30px;
+}
+
+.projects-pics-item h3:before {
+  content: '';
+  display: block;
+  border: 20px solid transparent;
+  border-bottom: 15px solid #fbfaf8;
+  position: absolute;
+  top: -58px;
+  left: 15px;
+}
+
+.projects-pics-item p {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  color: #d1d1d1;
+  margin: 0;
+  padding: 7px 0 27px 30px;
+}
+
+.projects-pics-item.active-projects-pic, .projects-pics-item:hover {
+  background-color: #362f2d;
+}
+
+.projects-pics-item.active-projects-pic h3,
+.projects-pics-item:hover h3 {
+  color: #ffffff;
+}
+
+.projects-pics-item.active-projects-pic h3:before,
+.projects-pics-item:hover h3:before {
+  border-bottom: 15px solid  #362f2d;
+}
+
+.projects-pics-item.active-projects-pic p,
+.projects-pics-item:hover p {
+  color: #c7b299;
+}
+
+.projects-pics-item.active-projects-pic .projects-pics-item-hoverlay,
+.projects-pics-item:hover .projects-pics-item-hoverlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(17, 17, 17, 0.7);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects a.big-yellow-button {
+  margin-top: -36px;
+  margin-bottom: 80px;
 }
 /*# sourceMappingURL=styles.css.map */

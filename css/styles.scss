@@ -1,61 +1,75 @@
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat-Regular.ttf);
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat-Light.ttf);
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat-Thin.ttf);
-    font-weight: 100;
-}
-
-@font-face {
-    font-family: 'Raleway';
-    src: url(../fonts/Raleway-Regular.ttf);
-    font-weight: 400;
-}
-
-
-
 $fullWidth: 1920px;
 
 /* временная переменная штука для быстрого включения выключения границ элемента при отладке */
 @mixin tempBorder {
-    border: 2px solid red; 
-    box-sizing: border-box; 
+    border: 2px solid red;
+    box-sizing: border-box;
+}
+
+@mixin hoverBrown {
+    &:hover {
+        color: #c7b299;
+    }
 }
 
 body {
     font-family: 'Montserrat';
-    
+    color: #ffffff;
+
+
     a {
         text-decoration: none;
-       /*  display: block; */
     }
 
 }
 
+.big-yellow-button {
+    display: block;
+    margin: 50px auto 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 170px;
+    height: 53px;
+    object-fit: contain;
+    border-radius: 3px;
+    box-shadow: inset 0px -3px 0 0 #736357;
+    box-sizing: border-box;
+    background-color: #998675;
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 53px;
+    color: #ffffff;
+    text-align: center;
+
+    &:hover {
+        color: rosybrown;
+        background-color: black;
+    }
+
+    &:active {
+        color: rosybrown;
+        background-color: black;
+        box-shadow: 0px -3px 0 0 #736357;
+
+    }
+}
+
 header {
     width: $fullWidth;
-    background: rgba(17, 17, 17, 0.7) 
-    url(../img/header-photo.jpg) center center no-repeat;
+    background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
     background-blend-mode: darken;
+    background-attachment: fixed;
+    background-size: 100%;
+    /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
     height: 1024px;
     margin: 0 auto;
 
     .header-nav {
         display: flex;
-        padding: 40px 374px 285px 374px;
+        padding: 40px 374px 277px 374px;
         height: 56px;
         justify-content: space-between;
-
 
         .header-logo {
             font-family: 'Raleway';
@@ -74,37 +88,501 @@ header {
                 height: 56px;
                 margin: 0;
             }
-    
+
+            @include hoverBrown;
+
         }
 
-        .header-nav-list {
+        &-pusher {
+            flex-grow: 1;
+        }
+
+        &-list {
             font-weight: 300;
             font-size: 14px;
+            padding-top: 5px;
+            float: right;
 
             ul {
                 display: flex;
 
                 li {
                     list-style: none;
-                    padding-right: 30px;
+                    padding-right: 27px;
 
                     a {
                         color: #ffffff;
-                    } 
+
+                        @include hoverBrown;
+
+                        &:active {
+                            color: #c7b299;
+                            font-weight: 700;
+                        }
+
+                        /* Я вижу, что при нажатии меню дергается, но для active может это и хорошо, привлекает внимание к нажатому элементу. а по hover ничего не прыгает.  */
+                    }
+
+                    &:nth-child(2) a {
+                        color: #c7b299;
+                    }
+
+                    &:last-child {
+                        margin-right: 20px;
+                    }
+
+
                 }
             }
 
         }
-        
+
         .header-cart {
-            @include tempBorder;
+            border: none;
+            background-color: transparent;
+            background: url(../img/icons/icon-cart.svg) center center no-repeat;
+            width: 40px;
+            height: 40px;
+            color: #ffffff;
+            margin-top: 5px;
+            margin-right: 20px;
+
+            &:hover {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 24"><path d="M15,3H13.5c0-1.66-2-3-4.5-3S4.5,1.34,4.5,3H3A3,3,0,0,0,0,6V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V6A3,3,0,0,0,15,3ZM9,1.5c1.66,0,3,.46,3,1.5H6C6,2,7.34,1.5,9,1.5ZM16.49,21A1.52,1.52,0,0,1,15,22.5H3A1.5,1.5,0,0,1,1.5,21V19.5h15Zm0-3H1.5V6A1.5,1.5,0,0,1,3,4.5H4.5V9H6V4.5h6V9h1.5V4.5H15A1.52,1.52,0,0,1,16.49,6Z" style="fill:%23c7b299;fill-rule:evenodd"/></svg>');
+                background-size: 18px 24px;
+            }
+
+            &:active {
+                border: 2px solid #c7b299;
+                border-radius: 50%;
+                box-shadow: none;
+                box-sizing: border-box;
+                /*     Все равно при нажатии остается какая-то штатная рамка нажатости кнопки, outline none ее не убирает, пока пусть так, но что-то тут не то =( */
+            }
 
         }
 
         .header-search {
-            @include tempBorder;
+            margin-top: 15px;
 
+            input {
+                width: 0;
+                outline: none;
+                border: none;
+                padding: 0;
+            }
+
+            input:focus {
+                width: 150px;
+                transition: width 1s ease-out;
+                margin-right: 10px;
+                padding: 4px;
+                /* С точки зрения UI наверное так себе решение, но пока пусть так */
+            }
+        }
+
+    }
+
+}
+
+.header-main {
+    padding: 0 161px 327px 159px;
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+        width: 52px;
+        height: 52px;
+        border: none;
+        border-top: 3px solid rgba(255, 255, 255, 0.5);
+        border-left: 3px solid rgba(255, 255, 255, 0.5);
+        background-color: transparent;
+        cursor: pointer;
+        margin-top: 112px;
+
+        &:hover {
+            border-color: #d3c1ad;
+        }
+
+        &.arrow-active {
+            border-color: #d3c1ad;
         }
     }
+
+    &-left {
+        transform: rotate(-45deg);
+    }
+
+    &-info {
+        text-align: center;
+
+        & h2 {
+            margin: 0;
+            font-family: Raleway;
+            font-size: 36px;
+            font-weight: 500;
+        }
+
+        & h1 {
+            margin: 0;
+            padding-top: 3px;
+            font-family: Raleway;
+            font-size: 52px;
+            font-weight: 800;
+            letter-spacing: 0.011em;
+        }
+
+        & p {
+            width: 590px;
+            margin: 0;
+            padding-top: 14px;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+    }
+
+    &-right {
+        transform: rotate(135deg);
+    }
+
+}
+
+.header-main-pagination {
+    margin: 0 auto;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    &-circle {
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        opacity: 0.5;
+
+        &.circle-active {
+            background-color: transparent;
+            border: 2px solid #d3c1ad;
+            transform: scale(1.9);
+        }
+
+        &:hover {
+            background-color: transparent;
+            border: 2px solid #d3c1ad;
+            transform: scale(1.9);
+        }
+    }
+}
+
+main {
+    width: $fullWidth;
+    margin: 0 auto;
+}
+
+.features {
+    text-align: center;
+
+    &-blok-wrap {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        padding: 80px 345px 80px 345px;
+
+    }
+
+    &-block {
+        width: 270px;
+        text-align: center;
+        margin: 0 15px 0 15px;
+
+        &-icon {
+            fill: #555555;
+        }
+
+        h2 {
+            margin: 0;
+            padding-top: 20px;
+            font-family: Raleway;
+            font-size: 22px;
+            font-weight: 600;
+            color: #555555;
+
+        }
+
+        p {
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.71;
+            color: #8c8c8c;
+            margin-bottom: 27px;
+            font-kerning: normal;
+        }
+
+        hr {
+            width: 70px;
+            height: 3px;
+            background-color: #f1eee9;
+            border: none;
+        }
+
+        &:hover svg,
+        &.active-block svg {
+            fill: #c7b299;
+        }
+
+        &:hover h2,
+        &.active-block h2 {
+            color: #c7b299;
+        }
+
+        &:hover hr,
+        &.active-block hr {
+            background-color: #c7b299;
+        }
+    }
+
+    &-content-wrap {
+        background-color: #fbfaf8;
+        padding: 70px 345px 0 345px;
+
+        h2 {
+            margin: 0;
+            font-family: Raleway;
+            font-size: 30px;
+            font-weight: 600;
+            color: #555555;
+        }
+
+        p {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: #8c8c8c;
+            padding: 15px 0 32px 0;
+            width: 780px;
+            margin: 0 auto;
+            font-kerning: none;
+        }
+    }
+
+    &-pics {
+        min-height: 482px;
+        background-image: url(../img/browser-center.jpg), url(../img/browser-left.jpg), url(../img/browser-right.jpg);
+        background-repeat: no-repeat;
+        background-position: center, left 82px, right 82px;
+    }
+
+
+}
+
+aside {
+    min-height: 150px;
+    background: linear-gradient(to right, #211b19, #4e3427);
+    display: flex;
+    justify-content: space-between;
+    padding: 43px 345px 0 345px;
+    box-sizing: border-box;
+
+    h2 {
+        font-family: Raleway;
+        font-size: 28px;
+        font-weight: 400;
+        color: #ffffff;
+        margin: 0;
+        padding-left: 32px;
+        font-kerning: none;
+
+        span {
+            color: #c7b299;
+        }
+    }
+
+    p {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 300;
+        color: #615855;
+        margin: 0;
+        padding: 3px 0 0 29px;
+    }
+    a.big-yellow-button {
+        margin: 6px 30px;
+     }
+}
+
+.section-desc-p {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #8c8c8c;
+    width: 800px;
+    margin: 14px auto 34px auto;
+    font-kerning: 0;
+}
+
+.projects {
+    padding: 78px 345px 0 345px;
+    text-align: center;
+
+    h2 {
+        font-family: Raleway;
+        font-size: 30px;
+        font-weight: 600;
+        color: #555555;
+        margin: 0;
+    }
+
+    &-nav {
+        display: flex;
+        justify-content: center;
+
+        &-element {
+            margin: 0 7px;
+            text-decoration: none;
+            height: 32px;
+            border-radius: 5px;
+            border: solid 1px #ebebeb;
+            min-width: 70px;
+            box-sizing: border-box;
+            padding: 0 18px 0 18px;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 32px;
+            text-align: center;
+            color: #8c8c8c;
+    
+            &:hover,
+            &.active-projects-button {
+                color: #ffffff;
+                background-color: #998675;
+            }
+    
+            &:active {
+                color: #ffffff;
+                background-color: #998675;
+                border-color: black;
+            }
+        }
+    }
+
+    &-pics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px 0;
+
+        &-item {
+            width: 370px;
+            background-color: #fbfaf8;
+            margin: 0 15px 30px 15px;
+            text-align: left;
+            position: relative;
+
+            &-hoverlay {
+                display: none;
+                position: absolute;
+                width: 370px;
+                height: 237px;
+
+                a{
+                    display: block;
+                    text-decoration: none;
+                    width: 25px;
+                    height: 25px;
+                    margin: 0 14px;
+
+                    &:first-child {
+                        background: url(../img/icons/share.svg) no-repeat;
+                    }
+                    &:last-child {
+                        background: url(../img/icons/search-2.svg) no-repeat;
+                    }
+
+                }
+            }
+
+            h3 {
+                margin: 24px 0 0 0;
+                font-family: Raleway;
+                font-size: 20px;
+                font-weight: 500;
+                color: #c7b299;
+                position: relative;
+                padding-left: 30px;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    border: 20px solid transparent; 
+                    border-bottom: 15px solid #fbfaf8;
+                    position: absolute;
+                    top: -58px;
+                    left: 15px;
+
+                }
+            }
+
+            p {
+                font-family: Montserrat;
+                font-size: 14px;
+                font-weight: 300;
+                color: #d1d1d1;
+                margin: 0;
+                padding: 7px 0 27px 30px;
+            }
+
+            &.active-projects-pic,
+            &:hover {
+                background-color: #362f2d;
+            }
+
+            &.active-projects-pic h3,
+            &:hover h3 {
+                color: #ffffff;
+
+                &:before {
+                    border-bottom: 15px solid  #362f2d;
+                }
+            } 
+
+            &.active-projects-pic p,
+            &:hover p {
+                color: #c7b299;
+            } 
+
+            &.active-projects-pic .projects-pics-item-hoverlay,
+            &:hover .projects-pics-item-hoverlay {
+                display: flex;
+                background-color: rgba(17, 17, 17, 0.7);
+                justify-content: center;
+                align-items: center;
+            } 
+
+
+
+
+
+
+            
+        }
+
+    }
+
+    & a.big-yellow-button {
+        margin-top: -36px;
+        margin-bottom: 80px;
+    }
+
+
+
 
 }
