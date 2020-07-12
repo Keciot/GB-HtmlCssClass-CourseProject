@@ -129,7 +129,7 @@
                     <div class="projects-pics-item-hoverlay">
                         <a href="#" class="projects-pics-item-hoverlay-share"></a>
                         <a href="#" class="projects-pics-item-hoverlay-search"></a>
-                    </div> <!-- Вижу комментарий о переносе этого дива после кода карочки, но тогда нужно будет дополнительно перепозиционировать его при наведении, а в таком положении позиционирование не требуется, карточка hover просто перекрывает исходный блок. В чем смысл переноса? -->
+                    </div> <!-- Вижу комментарий о переносе этого дива после кода карточки, но тогда нужно будет дополнительно перепозиционировать его при наведении, а в таком положении позиционирование не требуется, карточка hover просто перекрывает исходный блок. В чем смысл переноса?  Если же делать эти кнопки через before и after проблема возникнет в том, что по идее к каждой карточке адреса ссылок должны будут быть разные, и придется сложно прописывать сами адреса. А в таком варианте они логично располагаются в html в рамках той же карточки проекта -->
                     <img src="img/project-1.jpg" alt="phone" height="237">
                     <h3>Claritas Etiam Processus</h3>
                     <span>Photography, Nature</span>
@@ -182,8 +182,32 @@
                 </div>
 
             </div>
-            <a href="#" class="big-yellow-button">Load More</a>
+            <button class="big-yellow-button">Load More</button>
+        </section>
 
+        <section class="video">
+            <video src="#" poster="img/video-shot.jpg"></video>
+            <div class="video-content">
+                <button class="video-content-playbtn"></button>
+                <h2>Waxom Video Presentation</h2>
+                <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt <br> saepius, qui sequitur mutationem consuetudium.</p>
+                <span>03:26</span>
+
+
+            </div>
+        </section>
+
+        <section class="mobile">
+            <div class="mobile-wrap">
+                <h2>Excellent for Mobile Devices.</h2>
+                <p>Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                <ul class="mobile-list">
+                    <li>Nam liber tempor cum soluta nobis eleifend option;</li>
+                    <li>Option congue nihil imperdiet doming id quod mazim placerat facer;</li>
+                    <li>Eodem modo typi, qui nunc nobis videntur parum futurum;</li>
+                    <li>Investigationes demonstraverunt lectores</li>
+                </ul>
+            </div>
 
         </section>
 

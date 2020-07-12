@@ -91,7 +91,7 @@ header {
                 float: left;
                 width: 64px;
                 height: 56px;
-                margin: 0;                
+                margin: 0;
             }
 
             @include hoverBrown;
@@ -106,7 +106,9 @@ header {
 
         &-pusher {
             flex-grow: 1;
-        }  /* Нужен для отделения логотипа от меню, чтобы не разбивать интервал между ними паддингом. Занимает место и расталкивает элементы к левому/правому краям, при этом по идее в случае уменьшения ширины экрана не будет мешать переносу элементов */
+        }
+
+        /* Нужен для отделения логотипа от меню, чтобы не разбивать интервал между ними паддингом. Занимает место и расталкивает элементы к левому/правому краям, при этом по идее в случае уменьшения ширины экрана не будет мешать переносу элементов */
 
         &-list {
             font-weight: 300;
@@ -348,7 +350,9 @@ main {
             height: 3px;
             background-color: #f1eee9;
             border: none;
-        } /* Я понимаю, как сделать это через ::after, но не понимаю, почему нельзя через hr? Вроде бы все еще поддерживаемый, не выведенный из использования тег... Или смысл в экономии кода в html, задав after для всех элементов 1 раз? */
+        }
+
+        /* Я понимаю, как сделать это через ::after, но не понимаю, почему нельзя через hr? Вроде бы все еще поддерживаемый, не выведенный из использования тег... Или смысл в экономии кода в html, задав after для всех элементов 1 раз? */
 
         &:hover svg,
         &.active-block svg {
@@ -431,9 +435,10 @@ aside {
         margin: 0;
         padding: 3px 0 0 29px;
     }
+
     .big-yellow-button {
         margin: 6px 30px;
-     }
+    }
 }
 
 .section-desc-p {
@@ -479,13 +484,13 @@ aside {
             text-align: center;
             color: #8c8c8c;
             cursor: pointer;
-    
+
             &:hover,
             &.active-projects-button {
                 color: #ffffff;
                 background-color: #998675;
             }
-    
+
             &:active {
                 color: #ffffff;
                 background-color: #998675;
@@ -513,7 +518,7 @@ aside {
                 width: 370px;
                 height: 237px;
 
-                a{
+                a {
                     display: block;
                     text-decoration: none;
                     width: 25px;
@@ -523,6 +528,7 @@ aside {
                     &:first-child {
                         background: url(../img/icons/share.svg) no-repeat;
                     }
+
                     &:last-child {
                         background: url(../img/icons/search-2.svg) no-repeat;
                     }
@@ -542,7 +548,7 @@ aside {
                 &:before {
                     content: '';
                     display: block;
-                    border: 20px solid transparent; 
+                    border: 20px solid transparent;
                     border-bottom: 15px solid #fbfaf8;
                     position: absolute;
                     top: -58px;
@@ -571,14 +577,14 @@ aside {
                 color: #ffffff;
 
                 &:before {
-                    border-bottom: 15px solid  #362f2d;
+                    border-bottom: 15px solid #362f2d;
                 }
-            } 
+            }
 
             &.active-projects-pic p,
             &:hover p {
                 color: #c7b299;
-            } 
+            }
 
             &.active-projects-pic .projects-pics-item-hoverlay,
             &:hover .projects-pics-item-hoverlay {
@@ -586,24 +592,136 @@ aside {
                 background-color: rgba(17, 17, 17, 0.7);
                 justify-content: center;
                 align-items: center;
-            } 
+            }
 
-
-
-
-
-
-            
         }
 
     }
 
-    & a.big-yellow-button {
+    & .big-yellow-button {
         margin-top: -36px;
         margin-bottom: 80px;
     }
 
+}
+
+.video {
+    width: 100%;
+    position: relative;
+    background-color: #fbfaf8;
+    min-height: 500px;
+
+    & video {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &-content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        
+        &-playbtn {
+            width: 100px;
+            height: 100px;
+            margin: 210px auto 36px auto;
+            /* заготовка */
+
+        }
+
+        & h2  {
+            font-family: Raleway;
+            font-size: 30px;
+            font-weight: 500;
+            margin: 0;
+            padding-bottom: 13px;
+        }
+
+        & p {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.75;
+            margin: 0;
+            padding-bottom: 30px;
+        }
+        
+        & span {
+            font-family: Montserrat;
+            font-size: 14px;
+            line-height: 1.71;
+            color: #c7b299;
+            display: block;
+            margin: 0;
+            padding: 0 0 0 0;
+        }
+
+    }
+
+}
+
+.mobile {
+    min-height: 695px;
+    background: url(../img/i-phone-in-hand.jpg) no-repeat;
+    background-position: 421px 72px;
+    display: block;
+    padding-right: 391px;
+
+    &-wrap {
+        width: 657px;
+        float: right;
+        margin-top: 184px;
+    }
+
+    & h2 {
+        font-family: Raleway;
+        font-size: 30px;
+        font-weight: 600;
+        color: #555555;
+        margin: 0;
+    }
+
+    & p {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.75;
+        color: #8c8c8c;
+        margin: 0;
+        padding: 25px 0 30px 0;
+    }
+
+    &-list {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 48px;
+
+        & li {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 2;
+            color: #8c8c8c;
+
+            &:before {
+                content: ">";
+                display: inline-block;
+                width: 21px;
+                height: 21px;
+                border-radius: 50%;
+                background-color: #c7b299;
+                text-align: center;
+                line-height: 21px;
+                color: #fff;
+                margin-right: 30px;
+            }
+        }
 
 
-
+    }
 }
