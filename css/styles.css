@@ -49,15 +49,22 @@ body button {
           box-shadow: 0px -3px 0 0 #736357;
 }
 
+section {
+  width: 1920px;
+  margin: 0 auto;
+}
+
 header {
   width: 1920px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
   background-blend-mode: darken;
   background-attachment: fixed;
   background-size: 100%;
   /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
   height: 1024px;
-  margin: 0 auto;
 }
 
 header .header-nav {
@@ -200,6 +207,8 @@ header .header-nav .header-search input:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .header-main button {
@@ -466,6 +475,8 @@ aside .big-yellow-button {
 .projects {
   padding: 78px 345px 0 345px;
   text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .projects h2 {
@@ -1048,17 +1059,26 @@ aside .big-yellow-button {
 footer {
   width: 1920px;
   margin: 0 auto;
+  /* box-sizing: border-box;
+    
+
+    section {
+        padding: 0;
+        margin: 0;
+    }  */
 }
 
 .info {
   background-color: #191919;
-  padding: 80px 360px;
+  padding: 80px 360px 40px 360px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .info h2 {
@@ -1208,5 +1228,61 @@ footer {
 
 .info-widget img {
   margin-bottom: 10px;
+}
+
+.info-widget img:hover {
+  opacity: 0.5;
+}
+
+.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 39px 363px 51px 366px;
+  background-color: #111111;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bottom a {
+  text-decoration: none;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 13px;
+  color: #555555;
+  padding: 0 10px;
+  border-right: 1px solid #555555;
+}
+
+.bottom a:last-child {
+  border: none;
+}
+
+.bottom a:hover {
+  color: #c7b299;
+}
+
+.bottom a:hover span {
+  color: #c7b299;
+}
+
+.bottom a:active {
+  color: #fff;
+}
+
+.bottom a:active span {
+  color: #fff;
+}
+
+.bottom-litetxt {
+  color: #959595;
+}
+
+.bottom-faq {
+  color: #c7b299;
 }
 /*# sourceMappingURL=styles.css.map */

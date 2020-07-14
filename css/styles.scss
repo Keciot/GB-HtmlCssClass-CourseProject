@@ -60,15 +60,22 @@ body {
     }
 }
 
+section {
+    width: $fullWidth;
+    margin: 0 auto;
+}
+
 header {
     width: $fullWidth;
+    margin: 0 auto;
+    box-sizing: border-box;
     background: rgba(17, 17, 17, 0.7) url(../img/header-photo.jpg) center center no-repeat;
     background-blend-mode: darken;
     background-attachment: fixed;
     background-size: 100%;
     /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
     height: 1024px;
-    margin: 0 auto;
+    
 
     .header-nav {
         display: flex;
@@ -200,6 +207,7 @@ header {
     padding: 0 161px 327px 159px;
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
 
     & button {
         width: 52px;
@@ -453,6 +461,7 @@ aside {
 .projects {
     padding: 78px 345px 0 345px;
     text-align: center;
+    box-sizing: border-box;
 
     h2 {
         font-family: Raleway;
@@ -1013,14 +1022,23 @@ aside {
 }
 
 footer {
+    
     width: $fullWidth;
     margin: 0 auto;
-}
+    /* box-sizing: border-box;
+    
+
+    section {
+        padding: 0;
+        margin: 0;
+    }  */
+} 
 .info {
     background-color: #191919;
-    padding: 80px 360px;
+    padding: 80px 360px 40px 360px;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 
     h2 {
         font-family: Raleway;
@@ -1167,9 +1185,57 @@ footer {
 
         img {
             margin-bottom: 10px;
+
+            &:hover {
+                opacity: 0.5;
+            }
         }
     }
-
-
    
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 39px 363px 51px 366px;
+    background-color: #111111;
+    box-sizing: border-box;
+
+    a {
+        text-decoration: none;
+        font-family: Montserrat;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 13px;
+        color: #555555;
+        padding: 0 10px;
+        border-right: 1px solid #555555;
+
+        &:last-child {
+            border: none;
+        }
+
+        &:hover {
+            color: #c7b299;
+
+            span {
+                color: #c7b299;
+            }
+        }
+
+        &:active {
+            color: #fff;
+
+            span {
+                color: #fff;
+            }
+        }
+    }
+    &-litetxt {
+        color: #959595;
+    }
+
+    &-faq {
+        color: #c7b299;
+    }
 }
