@@ -155,6 +155,14 @@ header {
         .header-search {
             margin-top: 15px;
             position: relative;
+            
+            svg {
+                fill: #fff;
+                cursor: pointer;
+            }
+            &:hover svg {
+                fill: #c7b299;
+            }
 
             input {
                 width: 0;
@@ -637,7 +645,22 @@ aside {
             width: 100px;
             height: 100px;
             margin: 210px auto 36px auto;
-            /* заготовка */
+            border: none;
+            border-radius: 50%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.2);
+
+            .video-play-btn-icon {
+                fill: #fff;
+            }
+
+            &:hover .video-play-btn-icon {
+                fill: #8c8c8c;
+            }
+
+            &:active .video-play-btn-icon {
+                fill: black;
+            }
 
         }
 

@@ -154,6 +154,15 @@ header .header-nav .header-search {
   position: relative;
 }
 
+header .header-nav .header-search svg {
+  fill: #fff;
+  cursor: pointer;
+}
+
+header .header-nav .header-search:hover svg {
+  fill: #c7b299;
+}
+
 header .header-nav .header-search input {
   width: 0;
   outline: none;
@@ -670,7 +679,22 @@ aside .big-yellow-button {
   width: 100px;
   height: 100px;
   margin: 210px auto 36px auto;
-  /* заготовка */
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.video-content-playbtn .video-play-btn-icon {
+  fill: #fff;
+}
+
+.video-content-playbtn:hover .video-play-btn-icon {
+  fill: #8c8c8c;
+}
+
+.video-content-playbtn:active .video-play-btn-icon {
+  fill: black;
 }
 
 .video-content h2 {
