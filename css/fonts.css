@@ -46,3 +46,9 @@
     font-weight: 800;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/roboto-regular.ttf);
+    font-weight: 400;
+}
+
