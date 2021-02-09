@@ -1,4 +1,5 @@
 $fullWidth: 1920px;
+$mobileWidth: 576px;
 
 /* временная переменная штука для быстрого включения выключения границ элемента при отладке */
 @mixin tempBorder {
@@ -11,10 +12,16 @@ $fullWidth: 1920px;
         color: #c7b299;
     }
 }
+html {
+    width: 100%;
+}
 
 body {
     font-family: 'Montserrat';
     color: #ffffff;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
 
 
     a {
@@ -701,6 +708,7 @@ aside {
     background-position: 421px 72px;
     display: block;
     padding-right: 391px;
+    box-sizing: border-box;
 
     &-wrap {
         width: 657px;
@@ -1261,4 +1269,48 @@ footer {
     &-faq {
         color: #c7b299;
     }
+}
+
+@media (max-width: $mobileWidth) {
+
+    body {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    header {
+        width: 100%;
+        height: 100px;
+
+        .header-nav {
+            padding: 40px 0 277px 0;
+        }
+
+        .header-main, .header-main-pagination {
+            display: none;
+        }
+
+
+    }
+
+
+    main {
+        width: 100%;
+
+        .features {
+            padding: 80px 0 80px 0;
+        }
+
+        .features-blok-wrap {
+            padding: 80px 0 80px 0;
+            flex-wrap: wrap;
+
+        }
+    }
+
+    footer {
+        width: 100%;
+    }
+
 }

@@ -1,8 +1,16 @@
 @charset "UTF-8";
 /* временная переменная штука для быстрого включения выключения границ элемента при отладке */
+html {
+  width: 100%;
+}
+
 body {
   font-family: 'Montserrat';
   color: #ffffff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
 }
 
 body a {
@@ -730,6 +738,8 @@ aside .big-yellow-button {
   background-position: 421px 72px;
   display: block;
   padding-right: 391px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .mobile-wrap {
@@ -1308,5 +1318,37 @@ footer {
 
 .bottom-faq {
   color: #c7b299;
+}
+
+@media (max-width: 576px) {
+  body {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+  header {
+    width: 100%;
+    height: 100px;
+  }
+  header .header-nav {
+    padding: 40px 0 277px 0;
+  }
+  header .header-main, header .header-main-pagination {
+    display: none;
+  }
+  main {
+    width: 100%;
+  }
+  main .features {
+    padding: 80px 0 80px 0;
+  }
+  main .features-blok-wrap {
+    padding: 80px 0 80px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
