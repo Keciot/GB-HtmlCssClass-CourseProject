@@ -1284,16 +1284,21 @@ footer {
 
     header {
         width: 100%;
-        height: 100px;
+        height: 132px;
+        background-attachment: unset;
 
-         .header-nav {
-            padding: 40px 0 40px 0;
-            box-sizing: border-box;
-        } 
-
+            .header-nav {
+                padding: 27px 32px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        
         .header-nav-list ul {
             height: 0;
-            visibility: hidden;
+            // visibility: hidden;
+            display: none;
             margin: 0 auto;
             width: 100%;
             flex-direction: column; 
@@ -1301,40 +1306,28 @@ footer {
         
         .header-nav-pusher,
         .header-cart,
-        .search-icon-form__label {
+        .search-icon-form__label,
+        .header-main, 
+        .header-main-pagination {
             display: none;
         }
 
         #header-nav-toggle {
             display: flex;
             align-items: center;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            width: 26px;
-            height: 26px;
+            width: 60px;
+            height: 60px;
             cursor: pointer;
             z-index: 1;
           }
 
-          .header-nav-lines,
-          .header-nav-lines::after,
-          .header-nav-lines::before {
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: #616161;
-            transition-duration: .25s;
+          #header-nav-toggle:checked ~ .header-nav-list ul {
+            // visibility: visible;
+            display: flex;
+            flex-direction: column;
+            left: 0;
+          }         
 
-          }
-          
-
-
-
-        .header-main, .header-main-pagination {
-            display: none;
-        }
 
 
     }
