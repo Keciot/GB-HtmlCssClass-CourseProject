@@ -1284,27 +1284,33 @@ footer {
 
     header {
         width: 100%;
-        height: 132px;
+        min-height: 117px;
+        height: min-content;
         background-attachment: unset;
+        background-size: cover;
+        box-sizing: border-box;
 
             .header-nav {
-                padding: 27px 32px;
+                height: min-content;
+                padding: 27px 40px 0 32px;
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                flex-wrap: wrap;
             }
-        
+        .header-nav-list {
+            flex-basis:100%;
+            visibility: hidden;
+            height:0;
+        }
+
         .header-nav-list ul {
-            height: 0;
-            // visibility: hidden;
-            display: none;
-            margin: 0 auto;
+            height: 0; margin:0;
             width: 100%;
             flex-direction: column; 
         }
         
-        .header-nav-pusher,
         .header-cart,
         .search-icon-form__label,
         .header-main, 
@@ -1314,25 +1320,53 @@ footer {
 
         #header-nav-toggle {
             display: flex;
-            align-items: center;
             width: 60px;
             height: 60px;
             cursor: pointer;
-            z-index: 1;
+            z-index: 2;
+            position: absolute;
+            top: 27px;
+           right:32px;
+            appearance: none;
+            
           }
 
-          #header-nav-toggle:checked ~ .header-nav-list ul {
-            // visibility: visible;
-            display: flex;
-            flex-direction: column;
-            left: 0;
-          }         
+          label {
+              display: block;
+              width: 60px;
+              height: 60px;
+              z-index: 2;
+              background-image: url(../img/menu.svg);
 
+            
+          }
+
+        #header-nav-toggle:checked ~ label {
+            background-image: url(../img/close.svg);
+        }
+        
+        #header-nav-toggle:checked ~ .header-nav-list {
+            visibility: visible;
+            height:auto;
+        }
+
+        #header-nav-toggle:checked ~ .header-nav-list ul {
+            flex-direction: column;
+            width: 100%;
+            height: 300px;
+            padding-top: 30px;
+            font-size: 20px;
+        }
+        
+        #header-nav-toggle:checked ~ .header-nav-list ul li {
+            padding-bottom: 10px;
+        }
+          
 
 
     }
 
-    main,
+
     footer {
         display: none;
     }
