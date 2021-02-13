@@ -1375,14 +1375,14 @@ footer {
         width: 100%;
 
         .features-blok-wrap,
-        .features-content-wrap {
+        .features-content-wrap,
+        .projects {
             padding: 15px 0;
             flex-wrap: wrap;
         }
 
         .features-block {
             margin: 0;
-            /* padding: 15px 0; */
             width: 260px;
         }
 
@@ -1390,7 +1390,8 @@ footer {
             display: none;
         }
 
-        .features-p {
+        .features-p,
+        .section-desc-p {
             width: 100%;
         }
 
@@ -1406,6 +1407,10 @@ footer {
 
         .big-yellow-button {
             margin: 15px auto;
+        }
+
+        .projects-nav {
+            display: none;
         }
 
         

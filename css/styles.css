@@ -1428,20 +1428,21 @@ footer {
     width: 100%;
   }
   main .features-blok-wrap,
-  main .features-content-wrap {
+  main .features-content-wrap,
+  main .projects {
     padding: 15px 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   main .features-block {
     margin: 0;
-    /* padding: 15px 0; */
     width: 260px;
   }
   main .features-pics {
     display: none;
   }
-  main .features-p {
+  main .features-p,
+  main .section-desc-p {
     width: 100%;
   }
   main aside {
@@ -1456,6 +1457,9 @@ footer {
   }
   main .big-yellow-button {
     margin: 15px auto;
+  }
+  main .projects-nav {
+    display: none;
   }
   footer {
     display: none;
