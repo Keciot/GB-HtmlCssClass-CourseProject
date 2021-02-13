@@ -1420,6 +1420,23 @@ footer {
   header #header-nav-toggle:checked ~ .header-nav-list ul li {
     padding-bottom: 10px;
   }
+  section,
+  aside {
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
+  main .features-blok-wrap {
+    padding: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main .features-block {
+    margin: 0;
+    padding: 15px 0;
+    width: 260px;
+  }
   footer {
     display: none;
   }

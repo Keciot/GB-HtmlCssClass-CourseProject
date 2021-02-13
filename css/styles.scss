@@ -1366,6 +1366,30 @@ footer {
 
     }
 
+    section,
+    aside {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+
+        .features-blok-wrap {
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .features-block {
+            margin: 0;
+            padding: 15px 0;
+            width: 260px;
+        }
+
+
+    }
+
+
+
 
     footer {
         display: none;
