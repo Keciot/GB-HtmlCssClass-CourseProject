@@ -1442,7 +1442,8 @@ footer {
     display: none;
   }
   main .features-p,
-  main .section-desc-p {
+  main .section-desc-p,
+  main .mobile-wrap {
     width: 100%;
   }
   main aside {
@@ -1460,6 +1461,48 @@ footer {
   }
   main .projects-nav {
     display: none;
+  }
+  main .video {
+    display: none;
+    /* НЕ ЗАБЫТЬ ОТРЕДАКТИВРОАТЬ БЛОК ВИДЕО */
+  }
+  main .mobile {
+    padding: 40px;
+    background-position: 30px 240px;
+    background-size: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  main .mobile-wrap {
+    margin-top: 0;
+    /* 
+            Поскольку мобильный макет сделан так себе, ужатой картинкой, отрезанным текстом и явно без мыслей о том, как это будет выглядеть - не вижу смусла позиционировать список согласно макету же, лоигку сохраняю, за пиксльхантингом не гонюсь
+ */
+  }
+  main .mobile-wrap p {
+    font-size: 14px;
+  }
+  main .mobile-wrap li {
+    font-size: 12px;
+  }
+  main .mobile-wrap ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 290px;
+    float: right;
   }
   footer {
     display: none;

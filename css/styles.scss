@@ -79,12 +79,12 @@ header {
     background-size: 100%;
     /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
     height: 1024px;
-    
-    
+
+
     #header-nav-toggle {
         display: none;
     }
-    
+
 
     .header-nav {
         display: flex;
@@ -92,7 +92,7 @@ header {
         height: 56px;
         justify-content: space-between;
 
-       
+
 
         &-pusher {
             flex-grow: 1;
@@ -165,11 +165,12 @@ header {
         .header-search {
             margin-top: 15px;
             position: relative;
-            
+
             svg {
                 fill: #fff;
                 cursor: pointer;
             }
+
             &:hover svg {
                 fill: #c7b299;
             }
@@ -650,7 +651,7 @@ aside {
         height: 100%;
         top: 0;
         left: 0;
-        
+
         &-playbtn {
             width: 100px;
             height: 100px;
@@ -674,7 +675,7 @@ aside {
 
         }
 
-        & h2  {
+        & h2 {
             font-family: Raleway;
             font-size: 30px;
             font-weight: 500;
@@ -690,7 +691,7 @@ aside {
             margin: 0;
             padding-bottom: 30px;
         }
-        
+
         & span {
             font-family: Montserrat;
             font-size: 14px;
@@ -779,8 +780,8 @@ aside {
         align-items: center;
         width: 170px;
         padding: 0 15px 0 15px;
-    
-        svg{
+
+        svg {
             fill: #c7b299;
             padding-bottom: 30px;
         }
@@ -800,7 +801,7 @@ aside {
             line-height: 1.43;
             color: #c7b299;
             text-transform: uppercase;
-            
+
 
             &::after {
                 content: "";
@@ -814,7 +815,7 @@ aside {
 
 
 
-}   
+    }
 
 
 }
@@ -848,12 +849,12 @@ aside {
     }
 
     &-item {
-        
+
         width: 370px;
         position: relative;
         margin: 0 15px;
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
 
         .item-txtwrap {
             background-color: #f8f8f8;
@@ -861,9 +862,9 @@ aside {
 
         .item-picwrap {
             width: 370px;
-            height: 220px;   
-          
-            
+            height: 220px;
+
+
         }
 
         &-calendar {
@@ -894,7 +895,7 @@ aside {
                 text-align: center;
             }
         }
-        
+
         h3 {
             font-family: Raleway;
             font-size: 20px;
@@ -911,7 +912,7 @@ aside {
             line-height: 1.57;
             color: #8c8c8c;
             margin: 0;
-            padding: 0 0 20px 30px ;
+            padding: 0 0 20px 30px;
             text-align: left;
         }
 
@@ -928,7 +929,7 @@ aside {
             width: 100%;
 
             &::after {
-                content:'';
+                content: '';
                 display: inline-block;
                 background-image: url(../img/icons/arrow.svg);
                 width: 5px;
@@ -939,7 +940,7 @@ aside {
         }
 
         &:hover {
-        
+
             .item-txtwrap {
                 background-color: #362f2d;
             }
@@ -973,24 +974,24 @@ aside {
         .item-txtwrap {
             background-color: #362f2d;
         }
-    
+
         .item-picwrap {
             background: rgba(17, 17, 17, 0.7);
             background-blend-mode: darken;
         }
-    
+
         h3 {
             color: #c7b299;
         }
-    
+
         p {
             color: #ffffff;
         }
-    
+
         .date {
             background-color: #c7b299;
         }
-    
+
         .month {
             background-color: #a48d72;
         }
@@ -1011,8 +1012,8 @@ aside {
             line-height: 10px;
             padding: 0;
             margin: 0 1px;
-        
-            &:hover  {
+
+            &:hover {
                 border-color: #c7b299;
                 color: #c7b299;
             }
@@ -1022,9 +1023,9 @@ aside {
                 color: black;
             }
 
-            
 
-            
+
+
         }
 
         .active-postsnavbutton {
@@ -1046,17 +1047,17 @@ aside {
     a {
         padding: 11px 43px 0 47px;
 
-        &:hover img, 
+        &:hover img,
         &:active img {
             mix-blend-mode: overlay;
         }
-        
+
     }
 
 }
 
 footer {
-    
+
     width: $fullWidth;
     margin: 0 auto;
     /* box-sizing: border-box;
@@ -1066,7 +1067,8 @@ footer {
         padding: 0;
         margin: 0;
     }  */
-} 
+}
+
 .info {
     background-color: #191919;
     padding: 80px 360px 40px 360px;
@@ -1102,7 +1104,7 @@ footer {
         display: block;
         text-decoration: none;
     }
-   
+
     &-innerlink {
         font-family: Montserrat;
         font-size: 14px;
@@ -1118,7 +1120,7 @@ footer {
             color: #c7b299;
             border-color: #fff;
 
-            time{
+            time {
                 color: #fff;
             }
 
@@ -1131,7 +1133,7 @@ footer {
             color: white;
             border-color: white;
 
-            time{
+            time {
                 color: white;
             }
 
@@ -1140,7 +1142,7 @@ footer {
             }
         }
 
-        
+
 
 
     }
@@ -1149,7 +1151,7 @@ footer {
         color: #c7b299;
         /* border-color: #fff; */
 
-        time{
+        time {
             color: #fff;
         }
 
@@ -1176,21 +1178,21 @@ footer {
         width: 100%;
 
         &::after {
-            content:'\25b6';
+            content: '\25b6';
             display: inline-block;
-           /*  background-image: url(../img/icons/arrow.svg);
+            /*  background-image: url(../img/icons/arrow.svg);
             width: 5px;
             height: 8px; */
             margin-left: 9px;
         }
 
         &:hover {
-            color:#fff;
+            color: #fff;
         }
 
         &:active {
             color: royalblue;
-        }   
+        }
 
     }
 
@@ -1225,7 +1227,7 @@ footer {
             }
         }
     }
-   
+
 }
 
 .bottom {
@@ -1265,6 +1267,7 @@ footer {
             }
         }
     }
+
     &-litetxt {
         color: #959595;
     }
@@ -1290,30 +1293,32 @@ footer {
         background-size: cover;
         box-sizing: border-box;
 
-            .header-nav {
-                height: min-content;
-                padding: 27px 40px 0 32px;
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
+        .header-nav {
+            height: min-content;
+            padding: 27px 40px 0 32px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
         .header-nav-list {
-            flex-basis:100%;
+            flex-basis: 100%;
             visibility: hidden;
-            height:0;
+            height: 0;
         }
 
         .header-nav-list ul {
-            height: 0; margin:0;
+            height: 0;
+            margin: 0;
             width: 100%;
-            flex-direction: column; 
+            flex-direction: column;
         }
-        
+
         .header-cart,
         .search-icon-form__label,
-        .header-main, 
+        .header-main,
         .header-main-pagination {
             display: none;
         }
@@ -1326,42 +1331,42 @@ footer {
             z-index: 2;
             position: absolute;
             top: 27px;
-           right:32px;
+            right: 32px;
             appearance: none;
-            
-          }
 
-          label {
-              display: block;
-              width: 60px;
-              height: 60px;
-              z-index: 2;
-              background-image: url(../img/menu.svg);
+        }
 
-            
-          }
+        label {
+            display: block;
+            width: 60px;
+            height: 60px;
+            z-index: 2;
+            background-image: url(../img/menu.svg);
 
-        #header-nav-toggle:checked ~ label {
+
+        }
+
+        #header-nav-toggle:checked~label {
             background-image: url(../img/close.svg);
         }
-        
-        #header-nav-toggle:checked ~ .header-nav-list {
+
+        #header-nav-toggle:checked~.header-nav-list {
             visibility: visible;
-            height:auto;
+            height: auto;
         }
 
-        #header-nav-toggle:checked ~ .header-nav-list ul {
+        #header-nav-toggle:checked~.header-nav-list ul {
             flex-direction: column;
             width: 100%;
             height: 300px;
             padding-top: 30px;
             font-size: 20px;
         }
-        
-        #header-nav-toggle:checked ~ .header-nav-list ul li {
+
+        #header-nav-toggle:checked~.header-nav-list ul li {
             padding-bottom: 10px;
         }
-          
+
 
 
     }
@@ -1391,7 +1396,8 @@ footer {
         }
 
         .features-p,
-        .section-desc-p {
+        .section-desc-p,
+        .mobile-wrap {
             width: 100%;
         }
 
@@ -1413,8 +1419,46 @@ footer {
             display: none;
         }
 
+        .video {
+            display: none;
+            /* НЕ ЗАБЫТЬ ОТРЕДАКТИВРОАТЬ БЛОК ВИДЕО */
+        }
+
+        .mobile {
+            padding: 40px;
+            background-position: 30px 240px;
+            background-size: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .mobile-wrap { 
+            margin-top: 0;
+             
+            p {
+                font-size: 14px;
+            }
+
+            li {
+                font-size: 12px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                max-width: 290px;
+                float: right;
+
+            }
+/* 
+            Поскольку мобильный макет сделан так себе, ужатой картинкой, отрезанным текстом и явно без мыслей о том, как это будет выглядеть - не вижу смусла позиционировать список согласно макету же, лоигку сохраняю, за пиксльхантингом не гонюсь
+ */
         
-    
+        }
+
+
+
 
 
     }
@@ -1427,7 +1471,7 @@ footer {
     }
 
 
-  /*   main {
+    /*   main {
         width: 100%;
 
         .features {
