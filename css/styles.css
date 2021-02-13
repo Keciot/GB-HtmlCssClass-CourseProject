@@ -1427,15 +1427,35 @@ footer {
   main {
     width: 100%;
   }
-  main .features-blok-wrap {
-    padding: 0;
+  main .features-blok-wrap,
+  main .features-content-wrap {
+    padding: 15px 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   main .features-block {
     margin: 0;
-    padding: 15px 0;
+    /* padding: 15px 0; */
     width: 260px;
+  }
+  main .features-pics {
+    display: none;
+  }
+  main .features-p {
+    width: 100%;
+  }
+  main aside {
+    padding: 10px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  main .aside-wrap {
+    max-width: 350px;
+  }
+  main .big-yellow-button {
+    margin: 15px auto;
   }
   footer {
     display: none;

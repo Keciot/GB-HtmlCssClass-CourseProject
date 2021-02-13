@@ -1374,16 +1374,42 @@ footer {
     main {
         width: 100%;
 
-        .features-blok-wrap {
-            padding: 0;
+        .features-blok-wrap,
+        .features-content-wrap {
+            padding: 15px 0;
             flex-wrap: wrap;
         }
 
         .features-block {
             margin: 0;
-            padding: 15px 0;
+            /* padding: 15px 0; */
             width: 260px;
         }
+
+        .features-pics {
+            display: none;
+        }
+
+        .features-p {
+            width: 100%;
+        }
+
+        aside {
+            padding: 10px 0;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .aside-wrap {
+            max-width: 350px;
+        }
+
+        .big-yellow-button {
+            margin: 15px auto;
+        }
+
+        
+    
 
 
     }
