@@ -1381,7 +1381,11 @@ footer {
 
         .features-blok-wrap,
         .features-content-wrap,
-        .projects {
+        .projects,
+        .projects-nav,
+        .stats,
+        .posts-wrap,
+        .partners {
             padding: 15px 0;
             flex-wrap: wrap;
         }
@@ -1415,14 +1419,16 @@ footer {
             margin: 15px auto;
         }
 
-        .projects-nav {
-            display: none;
+        .projects-nav-element {
+            margin-bottom: 10px ;
         }
 
         .video {
-            display: none;
-            /* НЕ ЗАБЫТЬ ОТРЕДАКТИВРОАТЬ БЛОК ВИДЕО */
-        }
+            object-fit: cover; /* Не могу заставить картинку-постер увеличиться, как будто этот object-fit никак на нее не влияет. 
+            - Два постера под видео и заданные условия вроде как указать нельзя. 
+            - Псевдоэлемент с картинкой или перекроет все контролы от видео, или будет невидим
+            - Можно, конечно, обрезать картинку под нужный размер, сдлелать 2 блока видео и по медиазапросу показывать то один, то другой, но мне кажется, это тоже колхозное решение. На стакоферфлоу вроде позожие ыопросы вижу, но либо все не совсем то, либо почему-то не работает, а у отвечающих работает через object-fit */
+        } 
 
         .mobile {
             padding: 40px;
@@ -1457,8 +1463,30 @@ footer {
         
         }
 
+        .posts-wrap {
+            justify-content: space-around;
+        }
 
+        .posts-item {
+            margin-bottom: 15px;
+        }
 
+        .partners {
+            justify-content: space-around;
+            min-height: 170px;
+            background-size: cover;
+        }
+
+        .partners a {
+            padding: 0;          
+
+        }
+
+        .partners a  img{
+           width: 90px;
+           height: 90px;         
+
+        }
 
 
     }
@@ -1469,24 +1497,5 @@ footer {
     footer {
         display: none;
     }
-
-
-    /*   main {
-        width: 100%;
-
-        .features {
-            padding: 80px 0 80px 0;
-        }
-
-        .features-blok-wrap {
-            padding: 80px 0 80px 0;
-            flex-wrap: wrap;
-
-        }
-    }
-
-   footer {
-        width: 100%;
-    } */
 
 }
