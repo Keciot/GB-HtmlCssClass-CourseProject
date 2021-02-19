@@ -1390,8 +1390,14 @@ footer {
             flex-wrap: wrap;
         }
 
+        .features-blok-wrap  :nth-child(1) {order: 1;}
+        .features-blok-wrap  :nth-child(2) {order: 3;}
+        .features-blok-wrap  :nth-child(3) {order: 2;}
+        .features-blok-wrap  :nth-child(4) {order: 4;}
+
+
         .features-block {
-            margin: 0;
+            margin: 0 0 40px 0;
             width: 260px;
         }
 
@@ -1424,23 +1430,34 @@ footer {
         }
 
         .video {
-            object-fit: cover; /* Не могу заставить картинку-постер увеличиться, как будто этот object-fit никак на нее не влияет. 
-            - Два постера под видео и заданные условия вроде как указать нельзя. 
-            - Псевдоэлемент с картинкой или перекроет все контролы от видео, или будет невидим
-            - Можно, конечно, обрезать картинку под нужный размер, сдлелать 2 блока видео и по медиазапросу показывать то один, то другой, но мне кажется, это тоже колхозное решение. На стакоферфлоу вроде позожие ыопросы вижу, но либо все не совсем то, либо почему-то не работает, а у отвечающих работает через object-fit */
+            object-fit: cover; 
+
+            video {
+                height: 660px;
+            }
+
+            .video-content-playbtn {
+                margin-top: 200px;
+            }
         } 
 
         .mobile {
-            padding: 40px;
+            padding: 40px; 
             background-position: 30px 240px;
             background-size: 50%;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-between;
+        
         }
 
         .mobile-wrap { 
             margin-top: 0;
+
+            h2 {
+                text-align: center;
+                
+            }
              
             p {
                 font-size: 14px;
@@ -1478,14 +1495,52 @@ footer {
         }
 
         .partners a {
-            padding: 0;          
+            padding: 0 10px;          
 
         }
 
         .partners a  img{
-           width: 90px;
-           height: 90px;         
+           min-width: 90px;
+           max-width: 100px;
+           max-height: 90px;         
 
+        }
+
+
+    }
+
+    footer {
+        width: 100%;
+
+        .info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 40px 0 40px 0;
+        flex-wrap: wrap;
+        flex-direction: row;
+ 
+           div {
+                max-width: 220px;
+            }  
+
+            .info-widget {
+                height: fit-content;
+            }
+        } 
+
+        .bottom {
+            padding: 39px 0 51px 0;
+
+            &-left {
+                margin: 0 auto;
+                
+                & a {border-right: none;}
+
+            }
+
+            .bottom-right {
+                display: none;
+            }
         }
 
 
@@ -1493,9 +1548,5 @@ footer {
 
 
 
-
-    footer {
-        display: none;
-    }
 
 }

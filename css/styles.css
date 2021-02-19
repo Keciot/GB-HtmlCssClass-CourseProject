@@ -1438,8 +1438,28 @@ footer {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+  main .features-blok-wrap :nth-child(1) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  main .features-blok-wrap :nth-child(2) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  main .features-blok-wrap :nth-child(3) {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  main .features-blok-wrap :nth-child(4) {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
   main .features-block {
-    margin: 0;
+    margin: 0 0 40px 0;
     width: 260px;
   }
   main .features-pics {
@@ -1469,10 +1489,12 @@ footer {
   main .video {
     -o-object-fit: cover;
        object-fit: cover;
-    /* Не могу заставить картинку-постер увеличиться, как будто этот object-fit никак на нее не влияет. 
-            - Два постера под видео и заданные условия вроде как указать нельзя. 
-            - Псевдоэлемент с картинкой или перекроет все контролы от видео, или будет невидим
-            - Можно, конечно, обрезать картинку под нужный размер, сдлелать 2 блока видео и по медиазапросу показывать то один, то другой, но мне кажется, это тоже колхозное решение. На стакоферфлоу вроде позожие ыопросы вижу, но либо все не совсем то, либо почему-то не работает, а у отвечающих работает через object-fit */
+  }
+  main .video video {
+    height: 660px;
+  }
+  main .video .video-content-playbtn {
+    margin-top: 200px;
   }
   main .mobile {
     padding: 40px;
@@ -1485,15 +1507,18 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   main .mobile-wrap {
     margin-top: 0;
     /* 
             Поскольку мобильный макет сделан так себе, ужатой картинкой, отрезанным текстом и явно без мыслей о том, как это будет выглядеть - не вижу смусла позиционировать список согласно макету же, лоигку сохраняю, за пиксльхантингом не гонюсь
  */
+  }
+  main .mobile-wrap h2 {
+    text-align: center;
   }
   main .mobile-wrap p {
     font-size: 14px;
@@ -1526,13 +1551,46 @@ footer {
     background-size: cover;
   }
   main .partners a {
-    padding: 0;
+    padding: 0 10px;
   }
   main .partners a img {
-    width: 90px;
-    height: 90px;
+    min-width: 90px;
+    max-width: 100px;
+    max-height: 90px;
   }
   footer {
+    width: 100%;
+  }
+  footer .info {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 40px 0 40px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .info div {
+    max-width: 220px;
+  }
+  footer .info .info-widget {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  footer .bottom {
+    padding: 39px 0 51px 0;
+  }
+  footer .bottom-left {
+    margin: 0 auto;
+  }
+  footer .bottom-left a {
+    border-right: none;
+  }
+  footer .bottom .bottom-right {
     display: none;
   }
 }
