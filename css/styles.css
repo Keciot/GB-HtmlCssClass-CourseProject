@@ -3,6 +3,10 @@
 body {
   font-family: 'Montserrat';
   color: #ffffff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
 }
 
 body a {
@@ -65,6 +69,10 @@ header {
   background-size: 100%;
   /* для красоты прокрутки добавлено background-attachment: fixed; но тогда при уменьшении масштаба картинку кропает =(*/
   height: 1024px;
+}
+
+header #header-nav-toggle {
+  display: none;
 }
 
 header .header-nav {
@@ -730,6 +738,8 @@ aside .big-yellow-button {
   background-position: 421px 72px;
   display: block;
   padding-right: 391px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .mobile-wrap {
@@ -1308,5 +1318,280 @@ footer {
 
 .bottom-faq {
   color: #c7b299;
+}
+
+@media (max-width: 576px) {
+  body {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+  header {
+    width: 100%;
+    min-height: 117px;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    background-attachment: unset;
+    background-size: cover;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  header .header-nav {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    padding: 27px 40px 0 32px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .header-nav-list {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    visibility: hidden;
+    height: 0;
+  }
+  header .header-nav-list ul {
+    height: 0;
+    margin: 0;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .header-cart,
+  header .search-icon-form__label,
+  header .header-main,
+  header .header-main-pagination {
+    display: none;
+  }
+  header #header-nav-toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 27px;
+    right: 32px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  header label {
+    display: block;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    background-image: url(../img/menu.svg);
+  }
+  header #header-nav-toggle:checked ~ label {
+    background-image: url(../img/close.svg);
+  }
+  header #header-nav-toggle:checked ~ .header-nav-list {
+    visibility: visible;
+    height: auto;
+  }
+  header #header-nav-toggle:checked ~ .header-nav-list ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 300px;
+    padding-top: 30px;
+    font-size: 20px;
+  }
+  header #header-nav-toggle:checked ~ .header-nav-list ul li {
+    padding-bottom: 10px;
+  }
+  section,
+  aside {
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
+  main .features-blok-wrap,
+  main .features-content-wrap,
+  main .projects,
+  main .projects-nav,
+  main .stats,
+  main .posts-wrap,
+  main .partners {
+    padding: 15px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main .features-blok-wrap :nth-child(1) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  main .features-blok-wrap :nth-child(2) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  main .features-blok-wrap :nth-child(3) {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  main .features-blok-wrap :nth-child(4) {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  main .features-block {
+    margin: 0 0 40px 0;
+    width: 260px;
+  }
+  main .features-pics {
+    display: none;
+  }
+  main .features-p,
+  main .section-desc-p,
+  main .mobile-wrap {
+    width: 100%;
+  }
+  main aside {
+    padding: 10px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  main .aside-wrap {
+    max-width: 350px;
+  }
+  main .big-yellow-button {
+    margin: 15px auto;
+  }
+  main .projects-nav-element {
+    margin-bottom: 10px;
+  }
+  main .video {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main .video video {
+    height: 660px;
+  }
+  main .video .video-content-playbtn {
+    margin-top: 200px;
+  }
+  main .mobile {
+    padding: 40px;
+    background-position: 30px 240px;
+    background-size: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .mobile-wrap {
+    margin-top: 0;
+    /* 
+            Поскольку мобильный макет сделан так себе, ужатой картинкой, отрезанным текстом и явно без мыслей о том, как это будет выглядеть - не вижу смусла позиционировать список согласно макету же, лоигку сохраняю, за пиксльхантингом не гонюсь
+ */
+  }
+  main .mobile-wrap h2 {
+    text-align: center;
+  }
+  main .mobile-wrap p {
+    font-size: 14px;
+  }
+  main .mobile-wrap li {
+    font-size: 12px;
+  }
+  main .mobile-wrap ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 290px;
+    float: right;
+  }
+  main .posts-wrap {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  main .posts-item {
+    margin-bottom: 15px;
+  }
+  main .partners {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    min-height: 170px;
+    background-size: cover;
+  }
+  main .partners a {
+    padding: 0 10px;
+  }
+  main .partners a img {
+    min-width: 90px;
+    max-width: 100px;
+    max-height: 90px;
+  }
+  footer {
+    width: 100%;
+  }
+  footer .info {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 40px 0 40px 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .info div {
+    max-width: 220px;
+  }
+  footer .info .info-widget {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  footer .bottom {
+    padding: 39px 0 51px 0;
+  }
+  footer .bottom-left {
+    margin: 0 auto;
+  }
+  footer .bottom-left a {
+    border-right: none;
+  }
+  footer .bottom .bottom-right {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
