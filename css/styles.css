@@ -485,8 +485,6 @@ aside .big-yellow-button {
   color: #8c8c8c;
   width: 800px;
   margin: 14px auto 34px auto;
-  -webkit-font-kerning: 0;
-          font-kerning: 0;
 }
 
 .projects {
